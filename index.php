@@ -12,7 +12,7 @@ else
     $p = 'accueil';
 }
 
-// Connection a la DB
+// Connection a la DB comentaires de moi :p
 $db = new Database('marmiton');
 
 ob_start();
