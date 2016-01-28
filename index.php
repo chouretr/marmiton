@@ -14,6 +14,7 @@ else
 //testlololol
 //test2
 // Connection a la DB comentaires de moi :p
+// encore des coms
 $db = new Database('marmiton');
 
 ob_start();
