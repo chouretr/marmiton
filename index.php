@@ -11,7 +11,7 @@ else
 {
     $p = 'accueil';
 }
-
+//testlololol
 // Connection a la DB comentaires de moi :p
 $db = new Database('marmiton');
 
