@@ -12,7 +12,7 @@ else
     $p = 'accueil';
 }
 //testlololol
-//j'ai supprimer
+//nop
 $db = new Database('marmiton');
 
 ob_start();
