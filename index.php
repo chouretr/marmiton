@@ -1,6 +1,6 @@
 <?php
 
-require 'class/Autoloader.php';
+require 'Model/Class/Autoloader.php';
 Autoloader::register();
 
 if (isset($_GET['page']))
@@ -11,8 +11,7 @@ else
 {
     $p = 'accueil';
 }
-//testlololol
-//nopnop
+
 $db = new Database('marmiton');
 
 ob_start();
