@@ -63,6 +63,68 @@
                 <p class="help-block inline">minute(s)</p>
             </div>
         </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Temps de cuisson: </label>
+            <div class="col-md-2">
+                <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
+                <p class="help-block inline">heure(s)</p>
+                <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
+                <p class="help-block inline">minute(s)</p>
+            </div>
+        </div>
+        <legend></legend>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Nombre de portions: </label>
+            <div class="col-md-2">
+                <span>Pour</span>
+                <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
+                <p class="help-block inline"></p>
+                <span>personnes</span>
+            </div>
+        </div>
+
+        <legend></legend>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Ingrédients (quantité et intitulé): </label>
+            <div class="col-md-2">
+                <input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md">
+                <p class="help-block inline">quantité</p>
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                    <option value="1">Option one</option>
+                    <option value="2">Option two</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="unité" class="col-md-4 control-label">Unité</label>
+            <div class="col-md-2">
+                <input list="bieres" type="text" id="unité">
+                <datalist id="unité">
+                    <label for="unité">unité</label>
+                    <select name="unité" id="unité">
+                        <option value="grammes">grammes</option>
+                        <option value="litre(s)">litres</option>
+                    </select>
+                </datalist>
+            </div>
+        </div>
+
+        <datalist id="elements">
+            <select>
+                <option value="sans label ni contenu"></option>
+                <option value="sans label avec contenu texte">le texte</option>
+                <option value="avec label" label="le label"></option>
+                <option value="avec label et texte" label="le label">le texte</option>
+            </select>
+        </datalist>
+
+        <p>merde</p>
+
+
     </fieldset>
 </form>
 

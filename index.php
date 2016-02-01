@@ -24,6 +24,10 @@ elseif($p === 'page2')
 {
     require 'Pages/page2.php';
 }
+elseif($p === 'ajoutRecette.php')
+{
+    require 'Pages/ajoutRecette.php';
+}
 
 $content = ob_get_clean();
 require 'Pages/template/basepage.php'
