@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<form method="post" class="form-horizontal">
     <fieldset>
 
         <!-- Nom du formulaire -->
@@ -92,37 +92,24 @@
             <div class="col-md-2">
                 <input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md">
                 <p class="help-block inline">quantité</p>
-                <select id="selectbasic" name="selectbasic" class="form-control">
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
-                </select>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <label for="unité" class="col-md-4 control-label">Unité</label>
-            <div class="col-md-2">
-                <input list="bieres" type="text" id="unité">
-                <datalist id="unité">
-                    <label for="unité">unité</label>
-                    <select name="unité" id="unité">
-                        <option value="grammes">grammes</option>
-                        <option value="litre(s)">litres</option>
-                    </select>
+                <input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md">
+                <p class="help-block inline">unité</p>
+                <datalist id="urldata">
+                    <label for="adresse">ou sélectionner dans la liste</label>
+                         <select name="adresse" id="adresse">
+                            <option value="grammes">grammes</option>
+                            <option value="litres">litres</option>
+                         </select>
                 </datalist>
+
+
+                <button type="submit" class="btn btn-default">envoyer</button>
             </div>
-        </div>
+</div>
 
-        <datalist id="elements">
-            <select>
-                <option value="sans label ni contenu"></option>
-                <option value="sans label avec contenu texte">le texte</option>
-                <option value="avec label" label="le label"></option>
-                <option value="avec label et texte" label="le label">le texte</option>
-            </select>
-        </datalist>
+        <input type="submit" class="m_input_champ m_inscription_submit j_action" name="m_inscription_newsletter_submit" value="+" data-action="save">
 
-        <p>merde</p>
 
 
     </fieldset>
