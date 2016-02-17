@@ -1,18 +1,5 @@
-<form>
-    <input type="text" id="ingredient" />
-</form>
 
-<?php
-var liste = [
-    "farine",
-    "eau",
-    "ricard"
-];
-
-?>
-<script>
-$('#ingredient').autocmplete(
-{
-    source : liste
-});
-</script>
+<div class="ui-widget">
+    <label for="ingredients">Skills: </label>
+    <input id="ingredients">
+</div>

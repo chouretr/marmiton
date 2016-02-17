@@ -13,6 +13,7 @@ else
 }
 
 $db = new Database('marmiton');
+$bdd = $db->getPDO();
 
 ob_start();
 
@@ -31,5 +32,5 @@ elseif($p === 'testautocompletion')
 
 $content = ob_get_clean();
 require 'Pages/template/basepage.php';
-?>
+
 
