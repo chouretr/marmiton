@@ -111,7 +111,7 @@
         <input type="submit" class="m_input_champ m_inscription_submit j_action" name="m_inscription_newsletter_submit" value="+" data-action="save">
 
 
-
+<p>titre</p>
     </fieldset>
 </form>
 
