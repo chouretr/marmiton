@@ -1,3 +1,26 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var max_fields      = 10; //maximum input boxes allowed
+        var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+        var add_button      = $("#add"); //Add button ID
+
+        var x = 1; //initlal text box count
+        $(add_button).click(function(e){ //on add input button click
+            e.preventDefault();
+            if(x < max_fields){ //max input box allowed
+                x++; //text box increment
+                $(wrapper).append('<div><input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md"><p class="help-block inline">quantité</p><input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md"><p class="help-block inline">unité</p><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            }
+        });
+
+        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
+</script>
+
 <form method="post" class="form-horizontal">
     <fieldset>
 
@@ -92,20 +115,19 @@
             <div class="col-md-2">
                 <input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md">
                 <p class="help-block inline">quantité</p>
-
+            </div>
+            <div class="col-md-2">
                 <input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md">
                 <p class="help-block inline">unité</p>
-                <datalist id="urldata">
-                    <label for="adresse">ou sélectionner dans la liste</label>
-                         <select name="adresse" id="adresse">
-                            <option value="grammes">grammes</option>
-                            <option value="litres">litres</option>
-                         </select>
-                </datalist>
-
-
-                <button type="submit" class="btn btn-default">envoyer</button>
             </div>
+            <div class="input_fields_wrap"></div>
+                <button class="btn btn-default" id="add" type="button">Button</button>
+
+
+
+                <button class="btn btn-default" id="mdr" type="button">Supprimer</button>
+                <button type="submit" class="btn btn-default">envoyer</button>
+        </div>
 </div>
 
         <input type="submit" class="m_input_champ m_inscription_submit j_action" name="m_inscription_newsletter_submit" value="+" data-action="save">
@@ -114,6 +136,3 @@
 <p>titre</p>
     </fieldset>
 </form>
-
-
-
