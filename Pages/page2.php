@@ -11,7 +11,7 @@
             e.preventDefault();
             if(x < max_fields){ //max input box allowed
                 x++; //text box increment
-                $(wrapper).append('<div><input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md"><p class="help-block inline">quantité</p><input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md"><p class="help-block inline">unité</p><a href="#" class="remove_field">Remove</a></div>'); //add input box
+                $(wrapper).append('<div><input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md"><p class="help-block inline">quantité</p><input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md"><p class="help-block inline">unité</p><a href="#" class="remove_field">Remove</a></div>'); //add input boxs
             }
         });
 
