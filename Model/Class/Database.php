@@ -35,5 +35,14 @@ class Database{
 		$this->pdo = $pdo;
 		return $this->pdo;
 	}
+
+	public function query($sql)
+	{
+		$req = $this->getPDO()->query($sql);
+		$data = $req->fetchall(PDO::FETCH_OBJ);
+
+		return $data;
+
+	}
 }
 ?>

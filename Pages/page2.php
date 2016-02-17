@@ -67,9 +67,9 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">Temps de cuisson: </label>
             <div class="col-md-2">
-                <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
+                <input id="textinput" name="textinput" type="number" min="0" placeholder="0" class="form-control input-md">
                 <p class="help-block inline">heure(s)</p>
-                <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
+                <input id="textinput" name="textinput" type="number" min="0" placeholder="0" class="form-control input-md">
                 <p class="help-block inline">minute(s)</p>
             </div>
         </div>
@@ -79,7 +79,7 @@
             <label class="col-md-4 control-label" for="textinput">Nombre de portions: </label>
             <div class="col-md-2">
                 <span>Pour</span>
-                <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
+                <input id="textinput" name="textinput" type="number" min="1" placeholder="0" class="form-control input-md">
                 <p class="help-block inline"></p>
                 <span>personnes</span>
             </div>
@@ -114,4 +114,6 @@
 <p>titre</p>
     </fieldset>
 </form>
+
+
 

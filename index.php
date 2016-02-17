@@ -24,6 +24,10 @@ elseif($p === 'page2')
 {
     require 'Pages/page2.php';
 }
+elseif($p === 'testautocompletion')
+{
+    require 'Pages/testautocompletion.php';
+}
 
 $content = ob_get_clean();
 require 'Pages/template/basepage.php';
