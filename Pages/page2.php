@@ -100,9 +100,8 @@
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <div class="row input_fields_wrap">
-                <!-- contenu JS   merde -->
-
+            <div class="input_fields_wrap">
+                <!-- contenu JS    -->
             </div>
 
             <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus"></span></a>

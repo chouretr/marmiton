@@ -17,7 +17,7 @@ $(document).ready(function()
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div>' +
+            $(wrapper).append('<div class="row">' +
                                   '<div class="col-md-4"></div>' +
                                   '<div class="col-md-2">' +
                                           '<input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md">' +
@@ -29,7 +29,7 @@ $(document).ready(function()
 
                                   '</div>' +
                 '<a href="#" class="btn btn-default remove_field"><span class="glyphicon glyphicon-remove"></span></a>' +
-                                  '<div class="col-md-4"></div>';
+                                  '<div class="col-md-4"></div>' +
 
                               '</div>'); // ajout d'une ligne d'inputs pour ajouter un ingrédient
         }
