@@ -12,9 +12,6 @@ else
     $p = 'accueil';
 }
 
-$db = new Database('marmiton');
-$bdd = $db->getPDO();
-
 ob_start();
 
 if($p == 'accueil')
