@@ -11,16 +11,26 @@ $(function()
         });
     }
 
-    $("#add_etape").on("click", function () {
+    $("#add_etape").on("click", function ()
+    {
         i++;
-        $('<div class="col-md-6">' +
-            '<label for="etape">Etape ' + i + '</label>' +
-            '<input id="etape" name="etape" type="text" class="form-control input-md ">' +
-            '<a href="#" class="btn btn-default remove_fields"><span class="glyphicon glyphicon-remove"></span></a>' +
+        $('<div>' +
+                '<label class="col-md-4 control-label" for="etape">Etape: ' + i + '</label>' +
+
+                '<div class="col-md-6">' +
+                    '<textarea id="etape" name="etape" class="form-control input-md "></textarea>' +
+                '</div>' +
+
+                '<a href="#" class="btn btn-default remove_fields">' +
+                    '<span class="glyphicon glyphicon-remove"></span>' +
+                '</a>' +
+
             '</div>').appendTo('.row_etape');
-//s/a
+
         return false;
     });
+
+
     var test         = $(".row_etape");
     $(test).on("click",".remove_fields", function(e)
     { //user click on remove text
