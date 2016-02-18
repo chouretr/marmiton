@@ -98,7 +98,7 @@
                     <input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md">
                     <p class="help-block inline">unité</p>
                 </div>
-                <div class="col-md-2 ui-widget">
+                <div class="col-md-2">
                     <input id="ingredients" type="text" name="ingredient" class="form-control input-md">
                     <p class="help-block inline">ingrédient</p>
                 </div>

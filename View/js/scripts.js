@@ -17,7 +17,7 @@ $(function() {
 
     $("#add_ingredient").on("click", function () {
         x++;
-        $('<input type="text" class="tags" /><a href="#" class="btn btn-default remove_field"><span class="glyphicon glyphicon-remove"></span></a>').appendTo('.ui-widget');
+        $('<div id="test"><input type="text" class="tags" /><a href="#" class="btn btn-default remove_field"><span class="glyphicon glyphicon-remove"></span></a></div>').appendTo('.ui-widget');
         $(".tags").each(function () {
             run();
         });
