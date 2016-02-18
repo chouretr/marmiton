@@ -1,4 +1,4 @@
-<form method="post" class="form-horizontal">
+<form method="post" class="form-horizontal" action="./model/add_recipe.php">
     <fieldset>
 
         <!-- Nom du formulaire -->
@@ -43,7 +43,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="difficulté"></label>
             <div class="col-md-4">
-                <select id="difficulté" name="difficulté" class="form-control">
+                <select id="difficulté" name="difficulte" class="form-control">
                     <option value="">Facile</option>
                     <option value="">Moyen</option>
                     <option value="">Difficile</option>
@@ -91,15 +91,15 @@
             <div class="row">
                 <label class="col-md-4 control-label" for="textinput">Ingrédients (quantité et intitulé): </label>
                 <div class="col-md-2">
-                    <input id="textinput" name="quantité" type="number" placeholder="0" class="form-control input-md">
+                    <input id="textinput" name="quantite_1" type="number" placeholder="0" class="form-control input-md">
                     <p class="help-block inline">quantité</p>
                 </div>
                 <div class="col-md-2">
-                    <input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md">
+                    <input id="www" type="text" list="urldata" name="unite_1" class="form-control input-md">
                     <p class="help-block inline">unité</p>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control input-md tags" />
+                    <input type="text" name="ingredient_1" class="form-control input-md tags" />
                     <p class="help-block inline">ingrédient</p> <!--changement-->
                 </div>
                 <div class="col-md-2"></div>
@@ -123,9 +123,9 @@
                     <label class="col-md-4">Préparation de la recette :</label>
             </div>
              <div class="row_etape">
-                        <label class="col-md-4 control-label" for="etape">Etape 1:</label>
+                        <label class="col-md-4 control-label" for="etape_1">Etape 1:</label>
                         <div class="col-md-6">
-                            <input id="etape" name="etape" type="text" class="form-control input-md ">
+                            <textarea id="etape" name="etape_1'" class="form-control input-md "></textarea>
                         </div>
                         <div class="col-md-2">
 
@@ -137,6 +137,6 @@
             </div>
             <a href="#" class="btn btn-default" id="add_etape"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
-
+    <input type="submit" value="Valider" />
     </fieldset>
 </form>
