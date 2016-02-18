@@ -29,7 +29,7 @@ $(document).ready(function()
 
                                   '</div>' +
                 '<a href="#" class="btn btn-default remove_field"><span class="glyphicon glyphicon-remove"></span></a>' +
-                                  '<div class="col-md-4"></div>' +
+                                  '<div class="col-md-4"></div>';
 
                               '</div>'); // ajout d'une ligne d'inputs pour ajouter un ingrédient
         }
