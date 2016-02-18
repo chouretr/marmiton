@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control input-md tags" />
-                    <p class="help-block inline">ingrédient</p>
+                    <p class="help-block inline">ingrédient</p> <!--changement-->
                 </div>
                 <div class="col-md-2"></div>
             </div>
