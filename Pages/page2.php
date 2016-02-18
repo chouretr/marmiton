@@ -104,15 +104,15 @@
                 </div>
                 <div class="col-md-2"></div>
             </div>
+
             <div class="ui-widget">
-                <label for="tags">Tags: </label>
-                <input type="text" class="tags">
+
             </div>
             <div class="input_fields_wrap">
                 <!-- contenu JS    -->
             </div>
 
-            <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus add_ingredient"></span></a>
         </div>
 
         <legend></legend>
@@ -128,6 +128,10 @@
                         </div>
                     <a href="#" class="btn btn-default" id="add_etape"><span class="glyphicon glyphicon-plus"></span></a>
              </div>
+            <div class="input_field_wrap_etapes">
+
+            </div>
+            <a href="#" class="btn btn-default" id="add_etape"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
 
 

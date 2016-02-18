@@ -38,7 +38,8 @@ class Database{
 		return $data;
 	}
 
-	public function prepare($sql, $attributes){
+	public function prepare($sql, $attributes)
+	{
 
 		$req = $this->getPDO()->prepare($sql);
 		$req->execute($attributes);
@@ -48,7 +49,8 @@ class Database{
 
 	}
 
-	public function exec($sql){
+	public function exec($sql)
+	{
 		$req = $this->getPDO()->exec($sql);
 
 		return $req;
