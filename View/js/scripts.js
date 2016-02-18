@@ -4,7 +4,6 @@ $(function() {
     });
 });
 
-
 $(document).ready(function()
 {
     var max_fields      = 10; //maximum input boxes allowed
@@ -28,9 +27,12 @@ $(document).ready(function()
                                           '<p class="help-block inline">unité</p>' +
 
                                   '</div>' +
-                '<a href="#" class="btn btn-default remove_field"><span class="glyphicon glyphicon-remove"></span></a>' +
-                                  '<div class="col-md-4"></div>' +
-
+                                  '<div class="col-md-2 ui-widget">' +
+                                          '<input id="ingredients" type="text" name="ingredient" class="form-control input-md">' +
+                                          '<p class="help-block inline">ingrédient</p>' +
+                                  '</div>' +
+                                  '<a href="#" class="btn btn-default remove_field"><span class="glyphicon glyphicon-remove"></span></a>' +
+                                  '<div class="col-md-2"></div>' +
                               '</div>'); // ajout d'une ligne d'inputs pour ajouter un ingrédient
         }
     });

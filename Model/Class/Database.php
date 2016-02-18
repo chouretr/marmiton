@@ -43,7 +43,6 @@ class Database{
 		$data = $req->fetchall(PDO::FETCH_OBJ);
 
 		return $data;
-
 	}
 }
 ?>

@@ -98,7 +98,11 @@
                     <input id="www" type="text" list="urldata" name="adresseweb" class="form-control input-md">
                     <p class="help-block inline">unité</p>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-2 ui-widget">
+                    <input id="ingredients" type="text" name="ingredient" class="form-control input-md">
+                    <p class="help-block inline">ingrédient</p>
+                </div>
+                <div class="col-md-2"></div>
             </div>
             <div class="input_fields_wrap">
                 <!-- contenu JS    -->
@@ -106,5 +110,6 @@
 
             <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
+
     </fieldset>
 </form>
