@@ -4,6 +4,10 @@
         <!-- Nom du formulaire -->
         <legend>Saisie de votre recette</legend>
         <h5>Titre de votre recette :</h5>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="typeplat">Type de plat</label>
+            <input type="text" name="nom" id="" value="" />
+        </div>
         <!-- Ici on implémentera le nom saisie sur une page précédente avec un $_GET[]-->
 
 
@@ -125,7 +129,7 @@
              <div class="row_etape">
                         <label class="col-md-4 control-label" for="etape_1">Etape 1:</label>
                         <div class="col-md-6">
-                            <textarea id="etape" name="etape_1'" class="form-control input-md "></textarea>
+                            <textarea id="etape" name="etape_1" class="form-control input-md "></textarea>
                         </div>
                         <div class="col-md-2">
 
