@@ -115,5 +115,20 @@
             <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
 
+        <legend></legend>
+
+        <div class="form-group">
+            <div class="row">
+                    <label class="col-md-4">Préparation de la recette :</label>
+            </div>
+             <div class="row">
+                    <label class="col-md-4 control-label" for="etape">Etape 1:</label>
+                        <div class="col-md-6">
+                            <input id="etape" name="etape" type="text" class="form-control input-md ">
+                        </div>
+             </div>
+        </div>
+
+
     </fieldset>
 </form>
