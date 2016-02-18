@@ -23,17 +23,10 @@ class Database{
 	
 	public function getPDO()
 	{
-		try
-		{
-			$pdo = new PDO("mysql:dbname=$this->db_name;host=localhost", 'root', '');
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch(PDOException $e)
-		{
-			echo $show . "<br>" . $e->getMessage();
-		}
-
+		$pdo = new PDO("mysql:dbname=$this->db_name;host=localhost", 'root', '');
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->pdo = $pdo;
+
 		return $this->pdo;
 	}
 
@@ -43,6 +36,22 @@ class Database{
 		$data = $req->fetchall(PDO::FETCH_OBJ);
 
 		return $data;
+	}
+
+	public function prepare($sql, $attributes){
+
+		$req = $this->getPDO()->prepare($sql);
+		$req->execute($attributes);
+		$datas = $req->fetchall(PDO::FETCH_OBJ);
+
+		return $datas;
+
+	}
+
+	public function exec($sql){
+		$req = $this->getPDO()->exec($sql);
+
+		return $req;
 	}
 }
 ?>
