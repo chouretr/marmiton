@@ -112,7 +112,7 @@
                 <!-- contenu JS    -->
             </div>
 
-            <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="#" class="btn btn-default" id="add_ingredient"><span class="glyphicon glyphicon-plus add_ingredient"></span></a>
         </div>
 
         <legend></legend>
@@ -127,6 +127,10 @@
                             <input id="etape" name="etape" type="text" class="form-control input-md ">
                         </div>
              </div>
+            <div class="input_field_wrap_etapes">
+
+            </div>
+            <a href="#" class="btn btn-default" id="add_etape"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
 
 
