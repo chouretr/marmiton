@@ -22,7 +22,7 @@ $(function() {
             '<input id="etape" name="etape" type="text" class="form-control input-md ">' +
             '<a href="#" class="btn btn-default remove_fields"><span class="glyphicon glyphicon-remove"></span></a>' +
             '</div>').appendTo('.row_etape');
-
+//s/a
         return false;
     });
     var test         = $(".row_etape");
