@@ -6,6 +6,7 @@
 
 $(function() {
     var x = 1;
+    var i = 1;
     run();
 
     function run() {
@@ -14,6 +15,21 @@ $(function() {
 
         });
     }
+
+    $("#add_etape").on("click", function () {
+        i++;
+        $('<div class="col-md-6">' +
+            '<input id="etape" name="etape" type="text" class="form-control input-md ">' +
+            '<a href="#" class="btn btn-default remove_fields"><span class="glyphicon glyphicon-remove"></span></a>' +
+            '</div>').appendTo('.row_etape');
+
+        return false;
+    });
+    var test         = $(".row_etape");
+    $(test).on("click",".remove_fields", function(e)
+    { //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
 
     $("#add_ingredient").on("click", function () {
         x++;

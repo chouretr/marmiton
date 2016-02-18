@@ -121,11 +121,12 @@
             <div class="row">
                     <label class="col-md-4">Préparation de la recette :</label>
             </div>
-             <div class="row">
+             <div class="row_etape">
                     <label class="col-md-4 control-label" for="etape">Etape 1:</label>
                         <div class="col-md-6">
                             <input id="etape" name="etape" type="text" class="form-control input-md ">
                         </div>
+                    <a href="#" class="btn btn-default" id="add_etape"><span class="glyphicon glyphicon-plus"></span></a>
              </div>
         </div>
 
