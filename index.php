@@ -22,9 +22,13 @@ elseif($p === 'page2')
 {
     require 'Pages/page2.php';
 }
-elseif($p === 'testautocompletion')
+elseif($p === 'aff_recipe')
 {
-    require 'Pages/testautocompletion.php';
+    require 'Pages/aff_recipe.php';
+}
+elseif($p === 'modal')
+{
+    require 'Pages/modal.php';
 }
 
 $content = ob_get_clean();
