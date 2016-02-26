@@ -11,7 +11,7 @@ App\Autoloader::register();
 
 //include '../Database.php';
 
-include 'IngredientsTable.php';
+include 'IngredientTable.php';
 
 
 echo json_encode($data = App\Table\Ingredient::getIngredient($_GET['term']));

@@ -4,15 +4,9 @@ namespace App\Table;
 
 use Core\Table\Table;
 
-class Ingredient extends Table{
+class IngredientTable extends Table{
 
-    public static $table = 'ingredients';
-
-    public static function all(){
-
-        return App::getDB()->query("SELECT * FROM categorie", __CLASS__);
-
-    }
+    public $table = 'ingredients';
 
     public static function getIngredient($searchTerm){
 

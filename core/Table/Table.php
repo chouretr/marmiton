@@ -25,4 +25,14 @@ Class Table{
 
     }
 
+    public function query($sql, $attributes = null, $one = false){
+        if($attributes){
+            return $this->db->prepare($sql, $attributes, str_replace('Table', 'Entity', get_class($this)), $one);
+        }
+        else{
+            return $this->db->query($sql, str_replace('Table', 'Entity', get_class($this)), $one);
+        }
+
+    }
+
 }

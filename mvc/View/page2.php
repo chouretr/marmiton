@@ -18,8 +18,8 @@
             <label class="col-md-4 control-label" for="typeplat">Type de plat</label>
             <div class="col-md-4">
                 <select id="typeplat" name="typeplat" class="form-control">
-                    <?php foreach(\App\Table\Categorie::all() as $datas):?>
-                        <option value="<?= $datas->id; ?>"><?= $datas->nom; ?></option>
+                    <?php foreach(App::getInstance()->getTable('Categorie')->all() as $categorie):?>
+                        <option value="<?= $categorie->id; ?>"><?= $categorie->nom; ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
