@@ -12,14 +12,14 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="View/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../mvc/View/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="View/css/starter-template.css" rel="stylesheet">
+    <link href="../mvc/View/css/starter-template.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="View/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="View/js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]><script src="../js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../mvc/View/js/ie-emulation-modes-warning.js"></script>
   </head>
 
   <body>
@@ -48,10 +48,10 @@
 
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <script src="View/js/modal.js"></script>
-  <script src="View/js/carousel.js"></script>
-  <script src="View/js/scripts.js"></script>
+  <script src="../mvc/View/js/modal.js"></script>
+  <script src="../mvc/View/js/carousel.js"></script>
+  <script src=".../mvc/View/js/scripts.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="View/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="../mvc/View/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

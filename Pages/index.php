@@ -4,10 +4,16 @@ require '../Model/App.php';
 
 App::load();
 
-$app = App::getInstance();
-
-$post = $app->getTable('Categories');
-
-var_dump($post->all());
-
+if(isset($_GET['page'])){
+    $page = $_GET['page'];
+}
+else{
+    $page = 'home';
+}
+ob_start();
+if($page === 'home'){
+    require '../mvc/View/accueil.php';
+}
+$content = ob_get_clean();
+require '../mvc/View/Template/basepage.php';
 //mvc en approche !
