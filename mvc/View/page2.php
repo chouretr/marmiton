@@ -5,35 +5,31 @@
         <legend>Saisie de votre recette</legend>
         <h5>Titre de votre recette :</h5>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="typeplat">Type de plat</label>
-            <input type="text" name="nom" id="" value="" />
+            <label class="col-md-4 control-label" for="nom">Nom du plat</label>
+            <div class="col-md-4">
+                <input id="nom" type="text" name="nom" class="form-control input-md">
+            </div>
         </div>
-        <!-- Ici on impl√©mentera le nom saisie sur une page pr√©c√©dente avec un $_GET[]-->
 
+        <!-- Ici on impl?mentera le nom saisie sur une page pr?c?dente avec un $_GET[]-->
 
         <!-- Type de plat -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="typeplat">Type de plat</label>
             <div class="col-md-4">
                 <select id="typeplat" name="typeplat" class="form-control">
-                    <option value="">Entr√©e</option>
-                    <option value="">Plat principal</option>
-                    <option value="">Dessert</option>
-                    <option value="">Accompagnement</option>
-                    <option value="">Amuse-gueule</option>
-                    <option value="">Boisson</option>
-                    <option value="">Confiserie</option>
-                    <option value="">Sauce</option>
-                    <option value="">Conseil</option>
+                    <?php foreach(\App\Table\Categorie::all() as $datas):?>
+                        <option value="<?= $datas->id; ?>"><?= $datas->nom; ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
 
-        <!-- V√©g√©tarien -->
+        <!-- V?g?tarien -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="radios">V√©g√©tarien:</label>
+            <label class="col-md-4 control-label" for="radios">VÈgÈtarien:</label>
             <div class="col-md-4">
-                <label class="radio-inline" for="v√©g√©tarien">
+                <label class="radio-inline" for="v?g?tarien">
                     <input type="radio" name="radios" id="radios-0" value="" checked="checked">
                     Oui
                 </label>
@@ -45,13 +41,13 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label" for="difficult√©"></label>
+            <label class="col-md-4 control-label" for="difficult?"></label>
             <div class="col-md-4">
-                <select id="difficult√©" name="difficulte" class="form-control">
+                <select id="difficult?" name="difficulte" class="form-control">
                     <option value="">Facile</option>
                     <option value="">Moyen</option>
                     <option value="">Difficile</option>
-                    <option value="">Tr√©s difficile</option>
+                    <option value="">TrËs difficile</option>
                 </select>
             </div>
         </div>
@@ -59,7 +55,7 @@
         <legend></legend>
 
         <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Temps de pr√©paration: </label>
+            <label class="col-md-4 control-label" for="textinput">Temps de prÈparation: </label>
             <div class="col-md-2">
                 <input id="textinput" name="textinput" type="number" placeholder="0" class="form-control input-md">
                 <p class="help-block inline">heure(s)</p>
@@ -93,18 +89,18 @@
 
         <div class="form-group">
             <div class="row">
-                <label class="col-md-4 control-label" for="textinput">Ingr√©dients (quantit√© et intitul√©): </label>
+                <label class="col-md-4 control-label" for="textinput">IngrÈdients (quantitÈ et intitulÈ): </label>
                 <div class="col-md-2">
                     <input id="textinput" name="quantite_1" type="number" placeholder="0" class="form-control input-md">
-                    <p class="help-block inline">quantit√©</p>
+                    <p class="help-block inline">quantitÈ</p>
                 </div>
                 <div class="col-md-2">
                     <input id="www" type="text" list="urldata" name="unite_1" class="form-control input-md">
-                    <p class="help-block inline">unit√©</p>
+                    <p class="help-block inline">unitÈ</p>
                 </div>
                 <div class="col-md-2">
                     <input type="text" name="ingredient_1" class="form-control input-md tags" />
-                    <p class="help-block inline">ingr√©dient</p> <!--changement-->
+                    <p class="help-block inline">ingrÈdient</p> <!--changement-->
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -124,23 +120,23 @@
 
         <div class="form-group">
             <div class="row">
-                    <label class="col-md-4">Pr√©paration de la recette :</label>
+                <label class="col-md-4">PrÈparation de la recette :</label>
             </div>
-             <div class="row_etape">
-                        <label class="col-md-4 control-label" for="etape_1">Etape 1:</label>
-                        <div class="col-md-6">
-                            <textarea id="etape" name="etape_1" class="form-control input-md "></textarea>
-                        </div>
-                        <div class="col-md-2">
+            <div class="row_etape">
+                <label class="col-md-4 control-label" for="etape_1">Etape 1:</label>
+                <div class="col-md-6">
+                    <textarea id="etape" name="etape_1" class="form-control input-md "></textarea>
+                </div>
+                <div class="col-md-2">
 
-                        </div>
-             </div>
+                </div>
+            </div>
 
             <div class="input_field_wrap_etapes">
                 <!-- contenu via js -->
             </div>
             <a href="#" class="btn btn-default" id="add_etape"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
-    <input type="submit" value="Valider" />
+        <input type="submit" value="Valider" />
     </fieldset>
 </form>

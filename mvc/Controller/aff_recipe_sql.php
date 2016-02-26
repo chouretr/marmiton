@@ -1,10 +1,6 @@
 <?php
-include 'Model/Class/Database.php';
-$db = new Database('marmiton');
-
+$db = new App\Database('marmiton');
 $_GET['recette'] = "1";
-
-
 try
 {
     $categorie = $db->prepare('SELECT categorie.nom
@@ -16,7 +12,6 @@ catch(Exception $e)
 {
     ('Erreur : '.$e->getMessage());
 }
-
 try
 {
     $tpsprep = $db->prepare('SELECT temps_preparation_minute FROM recette WHERE id = ?', array($_GET['recette']));
@@ -25,7 +20,6 @@ catch(Exception $e)
 {
     ('Erreur : '.$e->getMessage());
 }
-
 try
 {
     $tpscuisson = $db->prepare('SELECT temps_cuisson_minute FROM recette WHERE id = ?', array($_GET['recette']));
@@ -34,7 +28,6 @@ catch(Exception $e)
 {
     ('Erreur : '.$e->getMessage());
 }
-
 try
 {
     $ingredients = $db->prepare('SELECT ingredients.nom AS ingredient, unite.nom AS unite, ingredients_recette.quantite AS quantite
@@ -47,7 +40,6 @@ catch(Exception $e)
 {
     ('Erreur : '.$e->getMessage());
 }
-
 try
 {
     $instructions = $db->prepare('SELECT instructions FROM recette WHERE id = ?', array($_GET['recette']));
@@ -56,11 +48,8 @@ catch(Exception $e)
 {
     ('Erreur : '.$e->getMessage());
 }
-
 foreach ($instructions as $result)
 {
     $tab = $result->instructions;
 }
 $tabres = explode("</div>", $tab);
-
-?>

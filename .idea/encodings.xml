@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="PROJECT" charset="UTF-8" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="ISO-8859-15">
+    <file url="file://$PROJECT_DIR$" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/.idea" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/Include" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/Model" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/Pages" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/README.md" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/Controller" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/accueil.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/aff_recipe.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/home.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/js/scripts.js" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/page2.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/testautocompletion.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/mvc/View/user.php" charset="ISO-8859-15" />
+    <file url="PROJECT" charset="ISO-8859-15" />
   </component>
 </project>

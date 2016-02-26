@@ -1,5 +1,5 @@
 <?php
-include 'Controller/aff_recipe_sql.php';
+include '../Controller/aff_recipe_sql.php';
 ?>
 
     <div class="row" id="categories">

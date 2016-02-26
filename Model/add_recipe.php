@@ -1,6 +1,6 @@
 <?php
 
-include '../Model/Class/Database.php';
+include '../Model/Table/Database.php';
 
 var_dump($_POST);
 

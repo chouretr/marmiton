@@ -1,15 +1,15 @@
 <?php
-	
+
+namespace Core\Database;
+
+use \PDO;
+
 class Database{
 
 	private $db_name;
-
 	private $db_user;
-
 	private $db_pass;
-
 	private $db_host;
-
 	private $pdo;
 
 	public function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost')
@@ -22,20 +22,32 @@ class Database{
 	
 	public function getPDO()
 	{
-		$pdo = new PDO("mysql:dbname=$this->db_name;host=localhost", 'root', '');
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$this->pdo = $pdo;
-
-
+		if ($this->pdo === null) {
+			$pdo = new PDO("mysql:dbname=marmiton;host=localhost", 'root', '');
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$this->pdo = $pdo;
+		}
 		return $this->pdo;
+
 	}
 
-	public function query($sql)
+	public function query($sql, $class_name = null, $one = false)
 	{
 		$req = $this->getPDO()->query($sql);
-		$data = $req->fetchall(PDO::FETCH_OBJ);
+		if($class_name === null){
+			$req->setFetchMode(PDO::FETCH_OBJ);
+		}
+		else{
+			$req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+		}
+		if($one){
+			$datas = $req->fetch();
+		}
+		else{
+			$datas = $req->fetchAll();
+		}
 
-		return $data;
+		return $datas;
 	}
 
 	public function prepare($sql, $attributes)

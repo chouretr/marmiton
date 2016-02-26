@@ -2,12 +2,15 @@ $(function()
 {
     var x = 1;
     var i = 1;
+
     run();
+
+
 
     function run()
     {
         $(".tags").autocomplete({
-            source: 'Controller/ingredient.php'
+            source: 'Model/Table/Script.php'
         });
     }
 
@@ -45,17 +48,17 @@ $(function()
                 '<div class="col-md-4"></div>' +
                 '<div class="col-md-2">' +
                     '<input id="textinput" name="quantite_' + x + '" type="number" placeholder="0" class="form-control input-md">' +
-                    '<p class="help-block inline">quantitÃ©</p>' +
+                    '<p class="help-block inline">quantité</p>' +
                 '</div>' +
 
                 '<div class="col-md-2">' +
                     '<input id="www" type="text" list="urldata" name="unite_' + x + '" class="form-control input-md">' +
-                    '<p class="help-block inline">unitÃ©</p>' +
+                    '<p class="help-block inline">unité</p>' +
                 '</div>' +
 
                 '<div class="col-md-2">' +
                     '<input type="text" name="ingredient_' + x + '" class="form-control input-md tags" />' +
-                    '<p class="help-block inline">ingrÃ©dient</p>' +
+                    '<p class="help-block inline">ingrédient</p>' +
                 '</div>' +
 
                 '<a href="#" class="btn btn-default remove_field">' +

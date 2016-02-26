@@ -1,0 +1,25 @@
+<?php
+
+
+namespace Mvc\Controller;
+
+use Core\Controller\Controller;
+
+class PostsController extends Controller{
+
+    public function index(){
+
+
+    }
+
+    public function categories(){
+
+
+    }
+
+    public function show(){
+
+
+    }
+
+}
