@@ -10,7 +10,7 @@ $(function()
     function run()
     {
         $(".tags").autocomplete({
-            source: 'Model/Table/Script.php'
+            source: '../app/Table/Script.php'
         });
     }
 

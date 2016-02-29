@@ -1,18 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Layer
- * Date: 19/02/2016
- * Time: 03:46
- */
 
-require '../Autoloader.php';
-App\Autoloader::register();
+require '../../core/Database/Database.php';
 
-//include '../Database.php';
-
-include 'IngredientTable.php';
+$db = new \Core\Database\Database('marmiton');
 
 
-echo json_encode($data = App\Table\Ingredient::getIngredient($_GET['term']));
+$secure = $_GET['term'];
+$resultas = $db->query('SELECT nom FROM ingredients WHERE ingredients.nom LIKE "%'.$secure.'%" ORDER BY nom LIMIT 25');
+
+
+foreach($resultas as $result){
+    //var_dump($result->nom);
+    $suggestions[] = $result->nom;
+}
+echo json_encode($suggestions);
+
+
 ?>
+

@@ -9,9 +9,9 @@ use \App;
 class PostsController extends AppController{
 
     public function index(){
-        $recette = App::getInstance()->getTable('recette')->all();
+        $recettes = App::getInstance()->getTable('recette')->all();
         $categories = App::getInstance()->getTable('categorie')->all();
-        $this->render('posts.index');
+        $this->render('posts.index', compact('recettes', 'categories'));
 
     }
 
@@ -21,7 +21,7 @@ class PostsController extends AppController{
     }
 
     public function add(){
-        $recette = App::getInstance()->getTable('recette')->all();
+        $recettes = App::getInstance()->getTable('recette')->all();
         $categories = App::getInstance()->getTable('categorie')->all();
         $this->render('posts.add');
 
