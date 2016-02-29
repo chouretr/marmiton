@@ -1,4 +1,15 @@
+<div class="row">
+    <div class="col-lg-3"></div>
 
+    <div class="col-lg-6" style="border: 1px solid black">
+
+    <div class="row">
+        <h1>
+            <?php foreach ($recettes as $nom): ?>
+                <?= $nom->nom." -"; ?>
+            <?php endforeach; ?>
+        </h1>
+    </div>
     <div class="row" id="categories">
                 <?php foreach ($categories as $categorie): ?>
                     <?= $categorie->nom." -"; ?>
@@ -47,9 +58,9 @@
         <?php endforeach; ?>
     </div>
 
-
-
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
+    </div>
+    <div class="col-lg-3"></div>
 
     <div class="modal fade and carousel slide" id="lightbox">
         <div class="modal-dialog">
@@ -62,15 +73,19 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="http://placehold.it/900x500/777/" alt="First slide">
+                            <img src="http://chr-formation.com/wp-content/uploads/2015/07/1307719766826.jpg"/>
+                            <div><?= $instructions[0] ?></div>
                         </div>
-                        <div class="item">
-                            <img src="http://placehold.it/900x500/666/" alt="Second slide">
-                        </div>
-                        <div class="item">
-                            <img src="http://placehold.it/900x500/555/" alt="Third slide">
-                            <div class="carousel-caption"><p>even with captions...</p></div>
-                        </div>
+                        <?php for($i = 1; $instructions[$i]; $i++)
+                            {
+                            ?>
+                            <div class="item">
+                                <img src="http://www.la-recette-de-cuisine.com/main/files/71c67de0f6ca91f79b01b67094e75005.jpeg" />
+                                <?= $instructions[$i] ?>
+                            </div>
+                            <?php
+                            }
+                            ?>
                     </div><!-- /.carousel-inner -->
                     <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -82,3 +97,4 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+</div>
