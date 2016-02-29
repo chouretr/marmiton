@@ -1,24 +1,33 @@
 <?php
-include '../Controller/aff_recipe_sql.php';
+include 'Controller/aff_recipe_sql.php';
 ?>
-
+    
     <div class="row" id="categories">
                 <?php foreach ($categorie as $result): ?>
                     <?= $result->nom." -"; ?>
                 <?php endforeach; ?>
     </div>
+
+    <div class="row" id="description">
+        <?php foreach ($description as $result): ?>
+            <?= $result->description ?>
+        <?php endforeach; ?>
+    </div>
+
     <div class="row" id="notes">
         <p>ici on mettra les notes quand on les auras !</p>
     </div>
 
     <div class="row" id="temps_prep">
         <?php foreach ($tpsprep as $result): ?>
+            <span>temps de préparation :</span>
             <?= $result->temps_preparation_minute; ?>
         <?php endforeach; ?>
     </div>
 
     <div class="row" id="temps_cuisson">
         <?php foreach ($tpscuisson as $result): ?>
+            <span>temps de cuisson :</span>
             <?= $result->temps_cuisson_minute; ?>
         <?php endforeach; ?>
     </div>
@@ -37,30 +46,54 @@ include '../Controller/aff_recipe_sql.php';
         </ul>
     </div>
 
-    <div class="row" id="preparation">
-
+    <div class="row" id="instructions">
+        <?php foreach ($instructions as $result): ?>
+            <?= $result->instructions ?>
+        <?php endforeach; ?>
     </div>
 
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Suivre la recette</button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+<?php
+var_dump($tab);
+?>
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
 
-        </div>
-    </div>
+
+<div class="modal fade and carousel slide" id="lightbox">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#lightbox" data-slide-to="0" class="active"></li>
+                    <li data-target="#lightbox" data-slide-to="1"></li>
+                    <li data-target="#lightbox" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                 <?php foreach ($tab as $res): ?>
+        
+                    <div class="item">
+                    <?= var_dump($res); ?>      
+
+                        
+                    </div>
+                <?php endforeach; ?>
+
+                </div>
+
+                <!-- /.carousel-inner -->
+                <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#lightbox" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            
+            </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
