@@ -6,9 +6,7 @@
 
 <div class="row">
     <div class="col-sm-8">
-        <?php foreach (App::getInstance()->getTable('recette')->last() as $recette): ?>
-        <p><?= $recette->nom; ?></p>
-        <?php endforeach; ?>
+
     </div>
 </div>
 

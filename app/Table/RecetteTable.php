@@ -16,5 +16,9 @@ class RecetteTable extends Table{
     {
 
     }
+    public function all()
+    {
+        return $this->db->query("SELECT * FROM recette");
+    }
 
 }

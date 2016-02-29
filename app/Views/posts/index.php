@@ -1,5 +1,5 @@
 <?php
-
+/*
 require '../app/App.php';
 
 App::load();
@@ -18,4 +18,4 @@ if($page === 'home'){
 if($page === 'page2'){
     $controller = new \App\Controller\PostsController();
     $controller->add();
-}
+}*/

@@ -3,19 +3,17 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="ISO-8859-15">
     <file url="file://$PROJECT_DIR$" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/.idea" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/Include" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/Model" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/Pages" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/Pages/posts/add.php" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/README.md" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/Controller" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/accueil.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/aff_recipe.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/home.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/js/scripts.js" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/page2.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/testautocompletion.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/mvc/View/user.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Controller" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views/accueil.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views/aff_recipe.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views/home.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views/js/scripts.js" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views/testautocompletion.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/app/Views/user.php" charset="ISO-8859-15" />
     <file url="PROJECT" charset="ISO-8859-15" />
   </component>
 </project>

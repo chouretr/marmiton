@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 /**
  * Created by PhpStorm.
@@ -8,12 +7,10 @@ namespace App;
  * Time: 16:02
  */
 class Autoloader{
-
     static function register()
     {
         spl_autoload_register(array(__CLASS__, 'autoload'));
     }
-
     static function autoload($class)
     {
         if (strpos($class, __NAMESPACE__ . '\\') === 0){
@@ -21,6 +18,5 @@ class Autoloader{
             $class = str_replace('\\', '/', $class);
             require __DIR__ . '/' . $class . '.php';
         }
-
     }
 }
