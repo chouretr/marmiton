@@ -10,7 +10,7 @@ class RecetteTable extends Table{
 
     public function last()
     {
-        return $this->db->query("SELECT * FROM recette");
+        return $this->query("SELECT * FROM recette");
     }
     public function resume()
     {
@@ -18,11 +18,11 @@ class RecetteTable extends Table{
     }
     public function all()
     {
-        return $this->db->query("SELECT * FROM recette");
+        return $this->query("SELECT * FROM recette");
     }
     public function show($id)
     {
-        return $this->db->prepare("SELECT * FROM recette WHERE id = ?", array($id));
+        return $this->query("SELECT * FROM recette WHERE id = ?", array($id));
     }
 
     public function expl($recettes)

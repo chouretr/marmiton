@@ -18,7 +18,7 @@
                     </div>
                     <div class="item">
                         <img src="http://placehold.it/900x500/555/" alt="Third slide">
-                        <div class="carousel-caption"><p>even with captions...</p></div>
+                        <div class="carousel-caption"><p>dqsdqd...</p></div>
                     </div>
                 </div><!-- /.carousel-inner -->
                 <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">

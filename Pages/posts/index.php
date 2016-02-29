@@ -3,11 +3,11 @@
 <p><a href="index.php?page=modal">lien vers modal</a> </p>
 
 <h1>Je suis la page d'accueil</h1>
-sdqsdsd
+<?php var_dump($_GET); ?>
 <div class="row">
     <div class="col-sm-8">
         <?php foreach($recettes as $recette ): ?>
-            <p><?= $recette->nom; ?></p>
+            <p><a href="<?= $recette->Url ;?>"><?= $recette->nom; ?></a></p>
         <?php endforeach; ?>
         <?php foreach($categories as $cateorie ): ?>
             <p><?= $cateorie->nom; ?></p>

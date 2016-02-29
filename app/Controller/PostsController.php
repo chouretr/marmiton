@@ -15,7 +15,8 @@ class PostsController extends AppController{
 
     }
 
-    public function categories(){
+    public function show(){
+        $recette = App::getInstance()->getTable('recette');
 
 
     }

@@ -2,6 +2,8 @@
 
 namespace Core\Table;
 
+use Core\Database\Database;
+
 
 Class Table{
 
@@ -9,7 +11,7 @@ Class Table{
     protected $db;
 
 
-    public function __construct(\Core\Database\Database $db)
+    public function __construct(Database $db)
     {
         $this->db = $db;
         if(is_null($this->table)){
@@ -21,7 +23,7 @@ Class Table{
     }
 
     public function all(){
-        return $this->db->query('SELECT * FROM ingredients');
+        return $this->query('SELECT * FROM ' . $this->table);
 
     }
 

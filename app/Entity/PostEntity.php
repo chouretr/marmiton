@@ -8,8 +8,12 @@
 
 namespace App\Entity;
 
-class PostEntity{
+use \Core\Entity\Entity;
 
+class PostEntity extends Entity{
 
+    public function yop(){
+        return 'index.php?=recette&id=' . $this->id;
+    }
 
 }

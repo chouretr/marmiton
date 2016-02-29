@@ -22,7 +22,7 @@ class Database{
 	
 	public function getPDO()
 	{
-		if ($this->pdo === null) {
+		if ($this->pdo === null){
 			$pdo = new PDO("mysql:dbname=marmiton;host=localhost", 'root', '');
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->pdo = $pdo;
@@ -46,15 +46,20 @@ class Database{
 		else{
 			$datas = $req->fetchAll();
 		}
-
 		return $datas;
 	}
 
-	public function prepare($sql, $attributes)
+	public function prepare($sql, $attributes, $class_name, $one = false)
 	{
 		$req = $this->getPDO()->prepare($sql);
 		$req->execute($attributes);
-		$datas = $req->fetchall(PDO::FETCH_OBJ);
+		$req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+		if($one){
+			$datas = $req->fetch();
+		}
+		else{
+			$datas = $req->fetchAll();
+		}
 
 		return $datas;
 	}

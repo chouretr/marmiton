@@ -10,10 +10,7 @@ namespace App\Entity;
 
 use \Core\Entity\Entity;
 
-class RecetteEntity extends Entity{
+class CategorieEntity extends Entity{
 
-    public function getUrl(){
-        return 'index.php?page=recipe&id=' . $this->id;
-    }
 
 }
