@@ -15,3 +15,10 @@ body
 {
   height: 600px;
 }
+
+#instructions
+{
+  border-top: solid gray 1px;
+  padding-bottom: 10px;
+}
+

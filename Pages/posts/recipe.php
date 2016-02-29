@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-lg-2"></div>
 
@@ -6,7 +7,7 @@
     <div class="row">
         <h1>
             <?php foreach ($recettes as $nom): ?>
-                <?= $nom->nom." -"; ?>
+                <?= $nom->nom; ?>
             <?php endforeach; ?>
         </h1>
     </div>
@@ -14,13 +15,15 @@
                 <?php foreach ($categories as $categorie): ?>
                     <?= $categorie->nom." -"; ?>
                 <?php endforeach; ?>
-    </div>
 
-    <div class="row" id="description">
-        <?php foreach ($recettes as $description): ?>
-            <?= $description->description ?>
-        <?php endforeach; ?>
-    </div>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-5">
+            <div class="row" id="description">
+                <?php foreach ($recettes as $description): ?>
+                    <?= $description->description ?>
+                <?php endforeach; ?>
+            </div>
 
     <div class="row" id="notes">
         <p>ici on mettra les notes quand on les auras !</p>
@@ -28,7 +31,7 @@
 
     <div class="row" id="temps_prep">
         <?php foreach ($recettes as $result): ?>
-            <span>temps de préparation :</span>
+            <span>temps de preparation :</span>
             <?= $result->temps_preparation_minute; ?>
         <?php endforeach; ?>
     </div>
@@ -41,6 +44,7 @@
     </div>
 
     <div class="row" id="ingredients">
+        <h4>Ingredients : </h4>
         <ul>
             <?php foreach ($ingredients as $result) {
                 echo "<li>";
@@ -53,13 +57,15 @@
     </div>
 
     <div class="row" id="instructions">
+        <h4>Preparation de la recette : </h4>
         <?php foreach ($recettes as $result): ?>
             <?= $result->instructions ?>
         <?php endforeach; ?>
     </div>
 
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
 
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
+            </div>
     <div class="col-lg-2"></div>
 
     <div class="modal fade and carousel slide" id="lightbox">
@@ -98,4 +104,5 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     </div>
+
 </div>
