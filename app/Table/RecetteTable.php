@@ -27,8 +27,11 @@ class RecetteTable extends Table{
 
     public function expl($recettes)
     {
-        var_dump($recettes->instructions);
-        return explode('</br>', $recettes->instructions);
+        foreach ($recettes as $result)
+        {
+            $tab = $result->instructions;
+        }
+        return explode('</br>', $tab);
     }
 
 }
