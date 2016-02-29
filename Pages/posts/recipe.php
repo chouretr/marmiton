@@ -1,7 +1,4 @@
-<?php
-include 'Controller/aff_recipe_sql.php';
-?>
-    
+
     <div class="row" id="categories">
                 <?php foreach ($categorie as $result): ?>
                     <?= $result->nom." -"; ?>

@@ -19,3 +19,7 @@ if($page === 'page2'){
     $controller = new \App\Controller\PostsController();
     $controller->add();
 }
+if($page === 'recipe'){
+    $controller = new \App\Controller\PostsController();
+    $controller->recipe();
+}
