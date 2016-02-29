@@ -70,6 +70,6 @@ foreach ($instructions as $result)
 {
     $tab = $result->instructions;
 }
-$tab = explode("</div>", $tab);
+$tab = explode("</div>", $re);
 
 ?>

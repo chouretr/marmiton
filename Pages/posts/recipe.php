@@ -31,15 +31,13 @@
 
     <div class="row" id="ingredients">
         <ul>
-            <?php foreach ($ingredients as $result): ?>
-                <?php
-                    echo "<li>";
-                    echo "- ".$result->quantite;
-                    echo " ".$result->unite;
-                    echo " ".$result->ingredient;
-                    echo "</li>";
-                ?>
-            <?php endforeach; ?>
+            <?php foreach ($ingredients as $result) {
+                echo "<li>";
+                echo "- " . $result->quantite;
+                echo " " . $result->unite;
+                echo " " . $result->ingredient;
+                echo "</li>";
+            }?>
         </ul>
     </div>
 
@@ -48,13 +46,8 @@
             <?= $result->instructions ?>
         <?php endforeach; ?>
     </div>
-
-
-<?php
-var_dump($tab);
-?>
-
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
+    <?php var_dump($instructions); ?>
 
 
 <div class="modal fade and carousel slide" id="lightbox">
@@ -70,14 +63,11 @@ var_dump($tab);
                 </ol>
 
                 <div class="carousel-inner">
-                 <?php foreach ($tab as $res): ?>
-        
-                    <div class="item">
-                    <?= var_dump($res); ?>      
 
-                        
+                    <div class="item">
+                        <h1> merde</h1>
                     </div>
-                <?php endforeach; ?>
+
 
                 </div>
 

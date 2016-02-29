@@ -25,4 +25,10 @@ class RecetteTable extends Table{
         return $this->db->prepare("SELECT * FROM recette WHERE id = ?", array($id));
     }
 
+    public function expl($recettes)
+    {
+        var_dump($recettes->instructions);
+        return explode('</br>', $recettes->instructions);
+    }
+
 }
