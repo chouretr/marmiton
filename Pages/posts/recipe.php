@@ -6,8 +6,8 @@
     </div>
 
     <div class="row" id="description">
-        <?php foreach ($description as $result): ?>
-            <?= $result->description ?>
+        <?php foreach ($recettes as $description): ?>
+            <?= $description->description ?>
         <?php endforeach; ?>
     </div>
 

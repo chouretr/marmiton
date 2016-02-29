@@ -20,5 +20,9 @@ class RecetteTable extends Table{
     {
         return $this->db->query("SELECT * FROM recette");
     }
+    public function show($id)
+    {
+        return $this->db->prepare("SELECT * FROM recette WHERE id = ?", array($id));
+    }
 
 }

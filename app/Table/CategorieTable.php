@@ -15,7 +15,13 @@ class CategorieTable extends Table{
 
     }
 
-
+    public function show($id)
+    {
+        return $this->db->prepare('SELECT categorie.nom
+              FROM categorie, categories_recette
+              WHERE categories_recette.categorie_id = categorie.id
+              AND categories_recette.recette_id = ?', array($id));
+    }
 
 
 }

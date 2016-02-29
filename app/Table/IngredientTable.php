@@ -19,6 +19,11 @@ class IngredientTable extends Table{
 
     }
 
+    public function show($id)
+    {
+        return $this->db->prepare("SELECT * FROM ingredients WHERE id = ?", array($id));
+    }
+
 
 }
 
