@@ -49,8 +49,7 @@
 
 
 
-
-    <a href="#lightbox" data-toggle="modal">Open Lightbox</a>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
 
     <div class="modal fade and carousel slide" id="lightbox">
         <div class="modal-dialog">
