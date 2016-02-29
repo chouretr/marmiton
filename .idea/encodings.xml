@@ -9,11 +9,9 @@
     <file url="file://$PROJECT_DIR$/app/Controller" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/app/Views" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/app/Views/accueil.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/app/Views/aff_recipe.php" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/app/Views/home.php" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/app/Views/js/scripts.js" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/app/Views/testautocompletion.php" charset="ISO-8859-15" />
-    <file url="file://$PROJECT_DIR$/app/Views/user.php" charset="ISO-8859-15" />
     <file url="PROJECT" charset="ISO-8859-15" />
   </component>
 </project>

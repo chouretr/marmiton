@@ -31,7 +31,7 @@ class PostsController extends AppController{
         $recettes = App::getInstance()->getTable('recette')->show('1');
         $categories = App::getInstance()->getTable('categorie')->show('1');
         $ingredients = App::getInstance()->getTable('ingredient')->show('1');
-        $this->render('posts.recipe', compact('recettes', 'categories'));
+        $this->render('posts.recipe', compact('recettes', 'categories', 'ingredients'));
 
     }
 

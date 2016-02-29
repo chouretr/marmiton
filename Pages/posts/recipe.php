@@ -16,14 +16,14 @@
     </div>
 
     <div class="row" id="temps_prep">
-        <?php foreach ($tpsprep as $result): ?>
+        <?php foreach ($recettes as $result): ?>
             <span>temps de préparation :</span>
             <?= $result->temps_preparation_minute; ?>
         <?php endforeach; ?>
     </div>
 
     <div class="row" id="temps_cuisson">
-        <?php foreach ($tpscuisson as $result): ?>
+        <?php foreach ($recettes as $result): ?>
             <span>temps de cuisson :</span>
             <?= $result->temps_cuisson_minute; ?>
         <?php endforeach; ?>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="row" id="instructions">
-        <?php foreach ($instructions as $result): ?>
+        <?php foreach ($recettes as $result): ?>
             <?= $result->instructions ?>
         <?php endforeach; ?>
     </div>
