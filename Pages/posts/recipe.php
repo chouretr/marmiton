@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="col-lg-3"></div>
+    <div class="col-lg-2"></div>
 
-    <div class="col-lg-6" style="border: 1px solid black">
+    <div class="col-lg-8 bloc_recette" style="border: 1px solid black">
 
     <div class="row">
         <h1>
@@ -59,8 +59,8 @@
     </div>
 
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
-    </div>
-    <div class="col-lg-3"></div>
+
+    <div class="col-lg-2"></div>
 
     <div class="modal fade and carousel slide" id="lightbox">
         <div class="modal-dialog">
@@ -97,4 +97,5 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    </div>
 </div>

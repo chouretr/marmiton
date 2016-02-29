@@ -2,8 +2,16 @@ body
 {
   padding-top: 50px;
 }
-
-.starter-template 
+.starter-template
 {
   padding: 40px 15px;
+}
+.modal.and.carousel
+{
+  position: absolute;
+}
+
+.bloc_recette
+{
+  height: 600px;
 }
