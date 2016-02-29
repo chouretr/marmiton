@@ -1,7 +1,7 @@
 
     <div class="row" id="categories">
-                <?php foreach ($categorie as $result): ?>
-                    <?= $result->nom." -"; ?>
+                <?php foreach ($categories as $categorie): ?>
+                    <?= $categorie->nom." -"; ?>
                 <?php endforeach; ?>
     </div>
 

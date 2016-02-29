@@ -29,8 +29,8 @@ class PostsController extends AppController{
 
     public function recipe(){
         $recettes = App::getInstance()->getTable('recette')->all();
-        $categorie = App::getInstance()->getTable('categorie')->all();
-        $this->render('posts.recipe', compact('recettes', 'categorie'));
+        $categories = App::getInstance()->getTable('categorie')->all();
+        $this->render('posts.recipe', compact('recettes', 'categories'));
 
     }
 
