@@ -21,11 +21,11 @@ class IngredientTable extends Table{
 
     public function show($id)
     {
-        return $this->db->prepare("SELECT ingredients.nom AS ingredient, unite.nom AS unite, ingredients_recette.quantite AS quantite
-FROM ingredients, unite, ingredients_recette
-WHERE ingredients_recette.recette_id = ?
-AND ingredients_recette.ingredients_id = ingredients.id
-AND ingredients_recette.unite_id = unite.id", array($id));
+        return $this->query("SELECT ingredients.nom AS ingredient, unite.nom AS unite, ingredients_recette.quantite AS quantite
+            FROM ingredients, unite, ingredients_recette
+            WHERE ingredients_recette.recette_id = ?
+            AND ingredients_recette.ingredients_id = ingredients.id
+            AND ingredients_recette.unite_id = unite.id", array($id));
     }
 
 

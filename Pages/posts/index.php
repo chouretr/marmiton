@@ -3,7 +3,6 @@
 <p><a href="index.php?page=modal">lien vers modal</a> </p>
 
 <h1>Je suis la page d'accueil</h1>
-<?php var_dump($_GET); ?>
 <div class="row">
     <div class="col-sm-8">
         <?php foreach($recettes as $recette ): ?>

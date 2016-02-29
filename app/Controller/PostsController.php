@@ -30,9 +30,9 @@ class PostsController extends AppController{
 
     public function recipe()
     {
-        $recettes = App::getInstance()->getTable('recette')->show('1');
-        $categories = App::getInstance()->getTable('categorie')->show('1');
-        $ingredients = App::getInstance()->getTable('ingredient')->show('1');
+        $recettes = App::getInstance()->getTable('recette')->show($_GET['id']);
+        $categories = App::getInstance()->getTable('categorie')->show($_GET['id']);
+        $ingredients = App::getInstance()->getTable('ingredient')->show($_GET['id']);
         $instructions = APP::getInstance()->getTable('recette')->expl($recettes);
         $this->render('posts.recipe', compact('recettes', 'categories', 'ingredients', 'instructions'));
     }

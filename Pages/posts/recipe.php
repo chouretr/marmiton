@@ -64,6 +64,7 @@
     </div>
 
 
+
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lightbox">Suivre la recette</button>
             </div>
     <div class="col-lg-2"></div>

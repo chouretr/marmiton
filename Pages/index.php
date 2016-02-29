@@ -6,9 +6,7 @@ App::load();
 
 $app = App::getInstance();
 
-$posts = $app->getTable('recette')->all();
 
-    var_dump($posts);
 
 
 
