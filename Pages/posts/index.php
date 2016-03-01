@@ -7,9 +7,6 @@
         <?php foreach($recettes as $recette ): ?>
             <p><a href="<?= $recette->Url ;?>"><?= $recette->nom; ?></a></p>
         <?php endforeach; ?>
-        <?php foreach($categories as $cateorie ): ?>
-            <p><?= $cateorie->nom; ?></p>
-        <?php endforeach; ?>
     </div>
 </div>
 

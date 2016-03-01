@@ -6,7 +6,6 @@
 
     <div class="row">
         <h1>
-
             <?php foreach ($recettes as $nom): ?>
                 <?= $nom->nom; ?>
             <?php endforeach; ?>
@@ -33,14 +32,14 @@
                 <div class="vote_progress" style="width:<?= $progression; ?>%;">
                 </div>
                 <div class="vote_btns">
-                    <form action="like.php?recette_id=1&vote=1" method="post">
+                    <form action="like.php?recette_id=<?= $_GET['id']?>&vote=1" method="post">
                         <button type="submit" class="vote_btn vote_like"><i class="fa fa-thumbs-up"></i>
                         <?php foreach ($recettes as $like): ?>
                             <?= $like->like_count ?>
                         <?php endforeach; ?>
                         </button>
                     </form>
-                    <form action="like.php?recette_id=1&vote=-1" method="post">
+                    <form action="like.php?recette_id=<?= $_GET['id']?>&vote=-1" method="post">
                     <button type="submit" class="vote_btn vote_dislike"><i class="fa fa-thumbs-down"></i>
                         <?php foreach ($recettes as $dislike): ?>
                             <?= $dislike->dislike_count ?>

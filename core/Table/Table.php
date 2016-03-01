@@ -178,7 +178,7 @@ Class Table{
         //var_dump($sql_ingredient);
         //var_dump($attributes_notes);
         //$this->query("INSERT INTO notes SET id_recette = ?", $id->id);
-        $this->query("INSERT INTO notes SET id_recette = ?", $attributes_notes, true);
+        $this->query("INSERT INTO votes SET id_recette = ?", $attributes_notes, true);
         //echo count($sql_ingredient);
         $c = 0;
         $d = 1;
@@ -199,7 +199,7 @@ Class Table{
             $tableadark[] = $id->id;
             //echo count($sql_ingredient);
             //var_dump($tableadark);
-            $this->query("INSERT INTO ingredients_recette SET quantite = ?, unite_id = ?, ingredients_id = ?, recette_id = ?", $tableadark, true);
+            var_dump($this->query("INSERT INTO ingredients_recette SET quantite = ?, unite_id = ?, ingredients_id = ?, recette_id = ?", $tableadark, true));
             $e++;
             $d++;
         }
