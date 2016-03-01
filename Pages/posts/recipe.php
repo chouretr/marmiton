@@ -22,9 +22,9 @@
                 <div class="vote_progress">
 
                 </div>
-                <div class="vote-btns">
-                    <div class="vote-btn vote_like">145</div>
-                    <div class="vote-btn vote_dislike">34</div>
+                <div class="vote_btns">
+                    <button class="vote_btn vote_like"><i class="fa fa-thumbs-up"></i> 145</button>
+                    <button class="vote_btn vote_dislike"><i class="fa fa-thumbs-down"></i> 34</button>
                 </div>
             </div>
         </div>

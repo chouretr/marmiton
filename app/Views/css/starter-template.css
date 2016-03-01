@@ -1,4 +1,4 @@
-@import "../fonts/font-awesome";
+@import '../fonts/FontAwesome.otf';
 body
 {
   padding-top: 50px;
@@ -43,4 +43,26 @@ body
 .vote_btns
 {
   margin-top: 10px;
+}
+
+.vote_btn
+{
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+  background: transparent;
+  transition: color 0.3s;
+}
+
+.vote_like:hover
+{
+  color: #63b96b;
+}
+
+.vote_dislike:hover
+{
+  color :#c91f17;
 }

@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 
-
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
     <link href="../app/Views/css/bootstrap.min.css" rel="stylesheet">
 
