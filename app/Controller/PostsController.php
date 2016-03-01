@@ -25,6 +25,14 @@ class PostsController extends AppController{
         $recettes = App::getInstance()->getTable('recette')->all();
         $categories = App::getInstance()->getTable('categorie')->all();
         $this->render('posts.add');
+        $add = App::getInstance()->getTable('recette');
+        if(!empty($_POST)){
+           $add->add([
+               'nom' => $_POST['nom'],
+               'categories_id' => $_POST['typeplat']
+            ]);
+
+        }
 
     }
 
