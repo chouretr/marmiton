@@ -39,13 +39,172 @@ Class Table{
 
     public function add($post){
         $sql_parts = [];
+        //var_dump($post);
+        ini_set("display_errors",0);error_reporting(0);
+        $heurprep = 0;
+        $heurcuis = 0;
         foreach($post as $k => $v){
-            $sql_parts[] = "$k = ?";
-            $attributes[] = $v;
+
+            if($k == 'heurprep')
+            {
+                if($v != 0) {
+                    $heurprep = 60 / $v;
+                }
+            }
+            elseif($k == 'minprep')
+            {
+                $v = $heurprep + $v;
+                $k = 'temps_preparation_minute';
+                $sql_parts[] = "$k = ?";
+                $attributes_recette[] = $v;
+            }
+            elseif($k == 'heurcuis')
+            {
+                if($v != 0) {
+                    $heurcuis = 60 / $v;
+                }
+            }
+            elseif($k == 'mincuis')
+            {
+                $v = $heurcuis + $v;
+                $k = 'temps_cuisson_minute';
+                $sql_parts[] = "$k = ?";
+                $attributes_recette[] = $v;
+            }
+
+            elseif($k == 'quantite')
+            {
+                $b = 1;
+                $sql_quantite[] = "$k = ?";
+
+                do
+                {
+
+
+                    if($v[$b] != null)
+                    {
+                       // $sql_ingredient[] = $v[$b];
+                        $b++;
+                        //var_dump($sql_ingredient);
+                    }
+
+                } while($b != count($v) + 1);
+                $sql_ingredient[] = $v;
+
+            }
+
+            elseif($k == 'ingredient') {
+                $res = $this->query("SELECT * FROM ingredients");
+                $a = 1;
+                $i = 0;
+                $sql[] = "$k = ?";
+
+                while ($v[$a]) {
+                    while ($res[$i]) {
+                        if ($res[$i]->nom == $v[$a]) {
+                            $v[$a] = $res[$i]->id;
+                            //$sql_ingredient[] = $v[$a];
+                        }
+                        $i++;
+                    }
+                    $i = 0;
+
+                    $a++;
+                }
+                $sql_ingredient[] = $v;
+            }
+            elseif($k == 'unite') {
+                $res = $this->query("SELECT * FROM unite");
+                $a = 1;
+                $i = 0;
+                $sql[] = "$k = ?";
+
+                while ($v[$a]) {
+                    //var_dump($v[$a]);
+                    //var_dump($res[$i]->nom, $v[$a]);
+                    while ($res[$i]) {
+                        if ($res[$i]->nom == $v[$a]) {
+                            $v[$a] = $res[$i]->id;
+                            //$sql_ingredient[] = $v[$a];
+
+                        }
+                        $i++;
+                    }
+                    $i = 0;
+
+                    $a++;
+                }
+                $sql_ingredient[] = $v;
+
+            }
+            else {
+
+
+                /*{
+                    var_dump($ingre);
+                    echo '------------------';
+                    foreach($ingre as $value){
+                        echo "debut ";
+
+                        //var_dump($a, $v[$a], $value);
+                        //var_dump($value);
+                        if($lol->nom == $v[$a])
+                        {
+                            echo 'condition';
+                            $v[$a] = $lol->id;
+                            var_dump($v[$a]);
+                        }
+                        //$a++;
+                        echo '  fin';
+                    }*/
+
+                //$attributes_recette[] = $v;
+                $sql_parts[] = "$k = ?";
+                $attributes_recette[] = $v;
+            }
+            //$a++;
         }
-        var_dump($sql_parts);
+        //var_dump($sql);
+        //var_dump($sql_ingredient);
+
         $sql_parts = implode(', ', $sql_parts);
-        var_dump($this->query("INSERT INTO {$this->table} SET $sql_parts", $attributes, true));
+        //var_dump($sql_parts);
+        //var_dump($attributes_recette);
+        //var_dump($sql_parts);
+        $this->query("INSERT INTO {$this->table} SET $sql_parts", $attributes_recette, true);
+        $id = $this->query("SELECT id FROM recette ORDER BY id DESC LIMIT 1", null, true);
+        $attributes_notes[] = $id->id;
+        $sql_ingredient[] = $id->id;
+        //var_dump($sql_ingredient);
+        //var_dump($attributes_notes);
+        //$this->query("INSERT INTO notes SET id_recette = ?", $id->id);
+        $this->query("INSERT INTO notes SET id_recette = ?", $attributes_notes, true);
+        //echo count($sql_ingredient);
+        $c = 0;
+        $d = 1;
+        $e = 0;
+
+        while($e < count($sql_ingredient[1])) {
+            //$sql_ingredient[$c][] = $id->id;
+            $tableadark = null;
+            $c = 0;
+            //var_dump($sql_ingredient);
+            while($c < count($sql_ingredient) - 1) {
+                $tableadark[] = $sql_ingredient[$c][$d];
+                //var_dump($sql_ingredient);
+
+
+                $c++;
+            }
+            $tableadark[] = $id->id;
+            //echo count($sql_ingredient);
+            //var_dump($tableadark);
+            $this->query("INSERT INTO ingredients_recette SET quantite = ?, unite_id = ?, ingredients_id = ?, recette_id = ?", $tableadark, true);
+            $e++;
+            $d++;
+        }
+        return true;
+        //var_dump($this->query("INSERT INTO recette SET $sql_parts", $attributes, true));
 
 
 

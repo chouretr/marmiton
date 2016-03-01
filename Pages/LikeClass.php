@@ -14,7 +14,7 @@ class Vote
         $req->execute(array($_GET['recette_id']));
         if($req->rowCount() > 0)
         {
-            $req = $this->pdo->prepare('INSERT INTO votes SET recette_id=?, user_ip=?, vote = 1');
+            $req = $this->pdo->prepare('INSERT INTO votes SET id_recette=?, user_id=?, vote = 1');
             $req->execute([$recette_id, $user_ip]);
             return true;
         }
@@ -29,7 +29,7 @@ class Vote
         $req = $this->pdo->prepare('SELECT * FROM recette WHERE id = ?');
         $req->execute(array($_GET['recette_id']));
         if ($req->rowCount() > 0) {
-            $req = $this->pdo->prepare('INSERT INTO votes SET recette_id=?, user_ip=?, vote = -1');
+            $req = $this->pdo->prepare('INSERT INTO votes SET id_recette=?, user_id=?, vote = -1');
             $req->execute([$recette_id, $user_ip]);
             return true;
         } else {
@@ -39,7 +39,7 @@ class Vote
 
         public function updateCount()
         {
-            $req = $this->pdo->prepare('SELECT COUNT(id) AS count, vote FROM votes WHERE recette_id = ? GROUP BY vote');
+            $req = $this->pdo->prepare('SELECT COUNT(id) AS count, vote FROM votes WHERE id_recette = ? GROUP BY vote');
             $req->execute([$_GET['recette_id']]);
             $votes = $req->fetchAll();
             $like = 0;

@@ -27,10 +27,43 @@ class PostsController extends AppController{
         $this->render('posts.add');
         $add = App::getInstance()->getTable('recette');
         if(!empty($_POST)){
+
+            $n = 1;
+            foreach($_POST as $k => $v)
+            {
+                if(strstr($k, 'ingredient') == true)
+                {
+                    $n++;
+                }
+
+            }
+
+            for($i = 1; $i != $n; $i++)
+            {
+                $quantite[$i] = $_POST['quantite_' .$i. ''];
+                $unite[$i] = $_POST['unite_' .$i. ''];
+                $ingredient[$i] = $_POST['ingredient_' .$i. ''];
+            }
+
+
            $add->add([
                'nom' => $_POST['nom'],
-               'categories_id' => $_POST['typeplat']
+               'categories_id' => $_POST['typeplat'],
+               'heurprep' => $_POST['heurprep'],
+               'minprep' => $_POST['minprep'],
+               'heurcuis' => $_POST['heurcuis'],
+               'mincuis' => $_POST['mincuis'],
+               //'nbport' => $_POST['nbport'],
+               'quantite' => $quantite,
+               'unite' => $unite,
+               'ingredient' => $ingredient
+
+
             ]);
+            if($add == true)
+            {
+                header("HTTP/1.0 404 Not Found");
+            }
 
         }
 

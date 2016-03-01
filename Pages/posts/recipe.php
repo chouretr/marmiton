@@ -18,7 +18,15 @@
                 <?php endforeach; ?>
         </div>
         <?php foreach ($recettes as $progress): ?>
-            <?php $progression = 100 * ($progress->like_count / ($progress->dislike_count + $progress->like_count)); ?>
+            <?php
+            if(($progress->dislike_count + $progress->like_count) == 0)
+            {
+                $progression = 0;
+            }
+            else
+            {
+                $progression = 100 * ($progress->like_count / ($progress->dislike_count + $progress->like_count));
+            }?>
         <?php endforeach; ?>
         <div class="vote">
             <div class="vote_bar">
