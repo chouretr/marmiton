@@ -27,7 +27,7 @@
   <nav class="navbar navbar-inverse navbar navbar-fixed-top">
       <div class="container">
           <div class="navbar-header">
-              <a class="navbar-brand" href="#">Marmiton</a>
+              <a class="navbar-brand" href="index.php">Marmiton</a>
           </div>
       </div>
   </nav>

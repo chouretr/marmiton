@@ -2,7 +2,7 @@
 <p><a href="index.php?page=recipe">lien vers la page de aff_recipe</a> </p>
 <p><a href="index.php?page=modal">lien vers modal</a> </p>
 
-<h1>Je suis la page d'accueil</h1>
+<h1>Recette</h1>
 <div class="row">
     <div class="col-sm-8">
         <?php foreach($recettes as $recette ): ?>
