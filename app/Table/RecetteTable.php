@@ -22,7 +22,8 @@ class RecetteTable extends Table{
     }
     public function show($id)
     {
-        return $this->query("SELECT * FROM recette WHERE id = ?", array($id));
+        $res = $this->query("SELECT * FROM recette WHERE id = ?", array($id));
+        return ($res);
     }
 
     public function expl($recettes)

@@ -34,7 +34,8 @@ class PostsController extends AppController{
         $categories = App::getInstance()->getTable('categorie')->show($_GET['id']);
         $ingredients = App::getInstance()->getTable('ingredient')->show($_GET['id']);
         $instructions = APP::getInstance()->getTable('recette')->expl($recettes);
-        $this->render('posts.recipe', compact('recettes', 'categories', 'ingredients', 'instructions'));
+
+        $this->render('posts.recipe', compact('recettes', 'categories', 'ingredients', 'instructions', 'progress'));
     }
 
 }

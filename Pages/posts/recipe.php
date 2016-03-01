@@ -6,6 +6,7 @@
 
     <div class="row">
         <h1>
+
             <?php foreach ($recettes as $nom): ?>
                 <?= $nom->nom; ?>
             <?php endforeach; ?>
@@ -16,15 +17,27 @@
                     <?= $categorie->nom." -"; ?>
                 <?php endforeach; ?>
         </div>
-
+        <?php foreach ($recettes as $progress): ?>
+            <?php $progression = 100 * ($progress->like_count / ($progress->dislike_count + $progress->like_count)); ?>
+        <?php endforeach; ?>
         <div class="vote">
             <div class="vote_bar">
-                <div class="vote_progress">
-
+                <div class="vote_progress" style="width:<?= $progression; ?>%;">
                 </div>
                 <div class="vote_btns">
-                    <button class="vote_btn vote_like"><i class="fa fa-thumbs-up"></i> 145</button>
-                    <button class="vote_btn vote_dislike"><i class="fa fa-thumbs-down"></i> 34</button>
+                    <form action="like.php?recette_id=1&vote=1" method="post">
+                        <button type="submit" class="vote_btn vote_like"><i class="fa fa-thumbs-up"></i>
+                        <?php foreach ($recettes as $like): ?>
+                            <?= $like->like_count ?>
+                        <?php endforeach; ?>
+                        </button>
+                    </form>
+                    <form action="like.php?recette_id=1&vote=-1" method="post">
+                    <button type="submit" class="vote_btn vote_dislike"><i class="fa fa-thumbs-down"></i>
+                        <?php foreach ($recettes as $dislike): ?>
+                            <?= $dislike->dislike_count ?>
+                        <?php endforeach; ?></button></button>
+                    </form>
                 </div>
             </div>
         </div>

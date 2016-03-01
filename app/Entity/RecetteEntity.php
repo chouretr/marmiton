@@ -15,5 +15,4 @@ class RecetteEntity extends Entity{
     public function getUrl(){
         return 'index.php?page=recipe&id=' . $this->id;
     }
-
 }
