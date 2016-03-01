@@ -1,4 +1,4 @@
-<form method="post" class="form-horizontal" action="../app/add_recipe.php">
+<form method="post" class="form-horizontal">
     <fieldset>
 
         <!-- Nom du formulaire -->

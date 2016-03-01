@@ -37,4 +37,19 @@ Class Table{
 
     }
 
+    public function add($post){
+        $sql_parts = [];
+        foreach($post as $k => $v){
+            $sql_parts[] = "$k = ?";
+            $attributes[] = $v;
+        }
+        var_dump($sql_parts);
+        $sql_parts = implode(', ', $sql_parts);
+        var_dump($this->query("INSERT INTO {$this->table} SET $sql_parts", $attributes, true));
+
+
+
+    }
+
+
 }

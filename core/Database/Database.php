@@ -52,7 +52,14 @@ class Database{
 	public function prepare($sql, $attributes, $class_name, $one = false)
 	{
 		$req = $this->getPDO()->prepare($sql);
-		$req->execute($attributes);
+		$res = $req->execute($attributes);
+		if(
+			strpos($sql, 'UPDATE') === 0 ||
+			strpos($sql, 'INSERT') === 0 ||
+			strpos($sql, 'DELETE') === 0
+		){
+			return $res;
+		}
 		$req->setFetchMode(PDO::FETCH_CLASS, $class_name);
 		if($one){
 			$datas = $req->fetch();
