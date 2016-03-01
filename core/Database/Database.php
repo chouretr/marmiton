@@ -58,7 +58,7 @@ class Database{
 			strpos($sql, 'INSERT') === 0 ||
 			strpos($sql, 'DELETE') === 0
 		){
-			$res;
+			return $res;
 		}
 		$req->setFetchMode(PDO::FETCH_CLASS, $class_name);
 		if($one){
