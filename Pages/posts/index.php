@@ -1,6 +1,5 @@
-<p><a href="index.php?page=page2">lien vers la page 2</a> </p>
-<p><a href="index.php?page=recipe">lien vers la page de aff_recipe</a> </p>
-<p><a href="index.php?page=modal">lien vers modal</a> </p>
+<p><a href="index.php?page=page2">ajout recette</a></p>
+
 
 <h1>Recette</h1>
 <div class="row">
