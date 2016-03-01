@@ -15,6 +15,19 @@
                 <?php foreach ($categories as $categorie): ?>
                     <?= $categorie->nom." -"; ?>
                 <?php endforeach; ?>
+        </div>
+
+        <div class="vote">
+            <div class="vote_bar">
+                <div class="vote_progress">
+
+                </div>
+                <div class="vote-btns">
+                    <div class="vote-btn vote_like">145</div>
+                    <div class="vote-btn vote_dislike">34</div>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-lg-3"></div>

@@ -65,7 +65,7 @@ $(function()
                     '<span class="glyphicon glyphicon-remove"></span>' +
                 '</a>' +
 
-            '</div>').appendTo('.ui-widget');
+        '</div>').appendTo('.ui-widget');
 
         $(".tags").each(function ()
         {

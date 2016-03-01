@@ -1,4 +1,5 @@
-body 
+@import "../fonts/font-awesome";
+body
 {
   padding-top: 50px;
 }
@@ -16,9 +17,30 @@ body
   height: 600px;
 }
 
-#instructions
-{
+#instructions {
   border-top: solid gray 1px;
   padding-bottom: 10px;
 }
+.vote
+{
+  margin: 50px 0px;
+}
 
+.vote_bar
+{
+  width: 150px;
+  height: 4px;
+  background-color: #c91f17;
+}
+
+.vote_progress
+{
+  height: 4px;
+  width: 50%;
+  background-color: #63b96b;
+}
+
+.vote_btns
+{
+  margin-top: 10px;
+}
