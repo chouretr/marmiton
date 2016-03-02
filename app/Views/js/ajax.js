@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(function ()
+{
     $('#get-data').click(function (event)
     {
         var showData = $('#show-data');
@@ -9,9 +10,11 @@ $(document).ready(function () {
             $.each(data,function(index, element)
             {
                 $('#show-data').append($('<div>', {
-                   html: '<a href="index.php?page=recipe&id='+element.id+'">'+element.nom+'</a>'
+                    html : '<a href="index.php?page=recipe&id='+element.id +'">'+element.nom+'</a>'
                 }));
             });
         });
     });
 });
+
+

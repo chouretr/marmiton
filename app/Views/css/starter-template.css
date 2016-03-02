@@ -67,3 +67,14 @@ body
 {
   color :#c91f17;
 }
+
+.remove_field
+{
+  display: inline-block;
+}
+.tags
+{
+  width: 80%;
+  padding-top: 10px;
+  display: inline-block;
+}

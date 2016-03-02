@@ -20,9 +20,5 @@ if(isset($_GET['name_search'])) {
 }
 
 //header('Location: ./');
-/* $requete = ('SELECT recette.id, recette.nom
-FROM recette, ingredients, ingredients_recette
-WHERE ingredients_recette.recette_id = recette.id
-AND ingredients_recette.ingredients_id = ingredients.id
-AND ingredients.nom = ?');*/
+
 ?>
