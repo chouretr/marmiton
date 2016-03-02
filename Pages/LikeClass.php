@@ -50,10 +50,11 @@ class Vote
                 {
                     $like = $vote['count'];
                 }
-                else
+                if($vote['vote'] == -1)
                 {
                     $dislike = $vote['count'];
                 }
+                //var_dump($vote);
 
             }
             $requete = $this->pdo->prepare('UPDATE recette SET like_count=?, dislike_count=? WHERE id=?');

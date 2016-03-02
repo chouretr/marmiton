@@ -9,7 +9,7 @@ $(document).ready(function () {
             $.each(data,function(index, element)
             {
                 $('#show-data').append($('<div>', {
-                    '<a href="index.php?page=recipe&id='+element.id +'>'+element.nom+'</a>'
+                   html: '<a href="index.php?page=recipe&id='+element.id+'">'+element.nom+'</a>'
                 }));
             });
         });

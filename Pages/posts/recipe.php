@@ -59,20 +59,20 @@
             </div>
 
     <div class="row" id="notes">
-        <p>ici on mettra les notes quand on les auras !</p>
+        <p></p>
     </div>
 
     <div class="row" id="temps_prep">
         <?php foreach ($recettes as $result): ?>
             <span>temps de preparation :</span>
-            <?= $result->temps_preparation_minute; ?>
+            <?= $result->temps_preparation_minute; ?> minutes
         <?php endforeach; ?>
     </div>
 
     <div class="row" id="temps_cuisson">
         <?php foreach ($recettes as $result): ?>
             <span>temps de cuisson :</span>
-            <?= $result->temps_cuisson_minute; ?>
+            <?= $result->temps_cuisson_minute; ?> minutes
         <?php endforeach; ?>
     </div>
 

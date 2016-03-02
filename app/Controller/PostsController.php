@@ -28,7 +28,7 @@ class PostsController extends AppController{
         $add = App::getInstance()->getTable('recette');
         if(!empty($_POST)){
 
-            $n = 1;
+            $n = 0;
             foreach($_POST as $k => $v)
             {
                 if(strstr($k, 'ingredient') == true)
@@ -37,12 +37,27 @@ class PostsController extends AppController{
                 }
 
             }
+            $o = 0;
+            foreach($_POST as $k => $v)
+            {
+                if(strstr($k, 'etape') == true)
+                {
+                    $o++;
+                }
 
-            for($i = 1; $i != $n; $i++)
+            }
+
+            for($i = 1; $i <= $n; $i++)
             {
                 $quantite[$i] = $_POST['quantite_' .$i. ''];
                 $unite[$i] = $_POST['unite_' .$i. ''];
                 $ingredient[$i] = $_POST['ingredient_' .$i. ''];
+
+            }
+
+            for($i = 1; $i <= $o; $i++)
+            {
+                $etape[$i] = $_POST['etape_' .$i.''];
             }
 
 
@@ -56,7 +71,8 @@ class PostsController extends AppController{
                //'nbport' => $_POST['nbport'],
                'quantite' => $quantite,
                'unite' => $unite,
-               'ingredient' => $ingredient
+               'ingredient' => $ingredient,
+               'instructions' => $etape
 
 
             ]);

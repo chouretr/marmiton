@@ -39,7 +39,7 @@ Class Table{
 
     public function add($post){
         $sql_parts = [];
-        //var_dump($post);
+        var_dump($post);
         ini_set("display_errors",0);error_reporting(0);
         $heurprep = 0;
         $heurcuis = 0;
@@ -137,6 +137,24 @@ Class Table{
                 $sql_ingredient[] = $v;
 
             }
+            elseif($k == 'instructions') {
+
+                var_dump($k, $v);
+                $nb = count($v) + 1;
+                for($i = 1; $i < $nb; $i++){
+
+                    $v[0] .= $v[$i].'</br>';
+                    //var_dump($v);
+                    unset($v[$i]);
+                    var_dump($v);
+                    var_dump($i);
+
+
+                }
+                $sql_parts[] = "$k = ?";
+                $attributes_recette[] = $v[0];
+
+            }
             else {
 
 
@@ -168,9 +186,10 @@ Class Table{
         //var_dump($sql_ingredient);
 
         $sql_parts = implode(', ', $sql_parts);
-        //var_dump($sql_parts);
+        var_dump($sql_parts);
         //var_dump($attributes_recette);
         //var_dump($sql_parts);
+        //var_dump($attributes_recette);
         $this->query("INSERT INTO {$this->table} SET $sql_parts", $attributes_recette, true);
         $id = $this->query("SELECT id FROM recette ORDER BY id DESC LIMIT 1", null, true);
         $attributes_notes[] = $id->id;
