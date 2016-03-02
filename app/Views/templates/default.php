@@ -51,6 +51,8 @@
   <script src="../app/Views/js/modal.js"></script>
   <script src="../app/Views/js/carousel.js"></script>
   <script src="../app/Views/js/scripts.js"></script>
+  <script src="../app/Views/js/ajax.js"></script>
+
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="../app/Views/js/ie10-viewport-bug-workaround.js"></script>
   </body>

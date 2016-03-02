@@ -11,5 +11,17 @@
 </div>
 
 
+    <div class="input-group input-group-lg icon-addon addon-lg">
+        <input type="text" placeholder="Rechercher une recette" name="name_search" id="name_search" class="form-control input-lg">
+        <i class="icon icon-search"></i>
+        <span class="input-group-btn">
+            <button type="submit" id="get-data" class="btn btn-inverse">Rechercher</button>
+        </span>
+    </div>
+    <div id="show-data">
+
+        <!-- contenu recherche -->
+    </div>
+
 
 
