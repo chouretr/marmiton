@@ -4,12 +4,14 @@ $(document).ready(function () {
         var showData = $('#show-data');
         var name_search = document.getElementById("name_search").value;
 
-        $.getJSON('search.php?name_search=soupe', function (data)
+        $.getJSON('search.php?name_search='+name_search, { get_param: 'value' }, function (data)
         {
-            $('#show-data').html('<p> Id recette: ' + data.id + '</p>');
-            $('#show-data').append('<p>Nom recette : ' + data.nom+ '</p>');
+            $.each(data,function(index, element)
+            {
+                $('#show-data').append($('<div>', {
+                    '<a href="index.php?page=recipe&id='+element.id +'>'+element.nom+'</a>'
+                }));
+            });
         });
-
-        showData.text('Loading the JSON file.');
     });
 });

@@ -1,6 +1,5 @@
 <?php
 header('Content-type: application/json');
-$_GET['name_search'] = "sou";
 if(isset($_GET['name_search'])) {
 
     $chaine = addslashes($_GET['name_search']);
