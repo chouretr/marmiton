@@ -191,12 +191,17 @@ Class Table{
         //var_dump($sql_parts);
         //var_dump($attributes_recette);
         $this->query("INSERT INTO {$this->table} SET $sql_parts", $attributes_recette, true);
+        //$this->query("INSERT INTO categories_recette SET $sql_parts", $attributes_recette, true);
         $id = $this->query("SELECT id FROM recette ORDER BY id DESC LIMIT 1", null, true);
         $attributes_notes[] = $id->id;
         $sql_ingredient[] = $id->id;
         //var_dump($sql_ingredient);
         //var_dump($sql_ingredient);
         //var_dump($attributes_notes);
+        $categorie[] = $id->id;
+        $categorie[] = $attributes_recette[1];
+
+        $this->query("INSERT INTO categories_recette SET recette_id = ?, categorie_id = ?", $categorie, true);
         $this->query("INSERT INTO votes SET id_recette = ?", $attributes_notes, true);
         //echo count($sql_ingredient);
         $c = 0;

@@ -13,7 +13,7 @@
     </div>
     <div class="row" id="categories">
                 <?php foreach ($categories as $categorie): ?>
-                    <?= $categorie->nom." -"; ?>
+                    <?= $categorie->nom." "; ?>
                 <?php endforeach; ?>
         </div>
         <?php foreach ($recettes as $progress): ?>
