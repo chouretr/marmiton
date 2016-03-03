@@ -48,8 +48,8 @@ $(function()
             i++;
         }
         url = url.substring(0, url.length - 1); // On retire le "&" de trop
-        //alert(url);
-        $.getJSON(url, { get_param: 'value' }, function (data)
+        alert(url);
+        $.getJSON(url, function (data)
         {
             $.each(data,function(index, element)
             {
