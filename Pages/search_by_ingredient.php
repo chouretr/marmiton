@@ -10,7 +10,7 @@
     }
 $tmp = substr($tmp, 0, -4);
 
-//header('Content-type: application/json');
+header('Content-type: application/json');
 if(isset($_GET['ingredient_1'])) {
 
    // $chaine = addslashes($_GET['name_search']);
@@ -29,15 +29,11 @@ WHERE ingredients_recette.recette_id = recette.id
 AND ingredients_recette.ingredients_id = ingredients.id
 AND ($tmp)
 GROUP BY recette.nom";
-    var_dump($requete);
-    var_dump($arr);
-    echo $arr[1];
-    echo ($requete);
     $res = $pdo->prepare($requete);
     $j = 1;
     while($j < $i)
     {
-        $res->bindParam(1, $arr[$j], PDO::PARAM_STR);
+        $res->bindParam($j, $arr[$j], PDO::PARAM_STR);
         $j++;
     }
     $res->execute();
