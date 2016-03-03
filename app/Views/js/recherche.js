@@ -59,5 +59,24 @@ $(function()
             });
         });
     });
+
+    $(document).ready(function ()
+    {
+        $('#get_by_cat').click(function (event)
+        {
+            var showData = $('#show_by_cat');
+            var cat_search = document.getElementById("categorie_id").value;
+
+            $.getJSON('search_by_cat.php?categorie_id='+cat_search, { get_param: 'value' }, function (data)
+            {
+                $.each(data,function(index, element)
+                {
+                    $('#show_by_cat').append($('<div>', {
+                        html : '<a href="index.php?page=recipe&id='+element.id +'">'+element.nom+'</a>'
+                    }));
+                });
+            });
+        });
+    });
 });
 

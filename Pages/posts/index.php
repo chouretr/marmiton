@@ -45,5 +45,22 @@
     </div>
 </div>
 
+<div class="col-lg-5" id="search_by_cat" style="Border: 1px solid deepskyblue; height: 200px;" >
+    <h3>Recherche par categorie</h3>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="typeplat">Type de plat</label>
+        <div class="col-md-4">
+            <select id="categorie" name="categorie" class="form-control">
+                <?php foreach(App::getInstance()->getTable('Categorie')->all() as $categorie):?>
+                    <option value="<?= $categorie->id; ?>"><?= $categorie->nom; ?></option>
+                <?php endforeach; ?>
+            </select>
 
+        <button type="submit"  id="get_by_cat" class="btn btn-inverse">Rechercher</button>
+        </div>
+    </div>
+    <div id="show_by_cat">
+        <!-- contenu recherche -->
+    </div>
+</div>
 
