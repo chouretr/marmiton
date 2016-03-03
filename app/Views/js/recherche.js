@@ -60,12 +60,10 @@ $(function()
         });
     });
 
-    $(document).ready(function ()
-    {
         $('#get_by_cat').click(function (event)
         {
-            var showData = $('#show_by_cat');
-            var cat_search = document.getElementById("categorie_id").value;
+            var showbycat = $('#show_by_cat');
+            var cat_search = document.getElementById("categorie").value;
 
             $.getJSON('search_by_cat.php?categorie_id='+cat_search, { get_param: 'value' }, function (data)
             {
@@ -77,6 +75,5 @@ $(function()
                 });
             });
         });
-    });
 });
 
