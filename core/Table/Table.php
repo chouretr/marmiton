@@ -40,6 +40,7 @@ Class Table{
     public function add($post){
         $sql_parts = [];
         //var_dump($post);
+    //hellllo
         ini_set("display_errors",0);error_reporting(0);
         $heurprep = 0;
         $heurcuis = 0;
