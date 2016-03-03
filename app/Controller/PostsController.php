@@ -11,7 +11,10 @@ class PostsController extends AppController{
     public function index(){
         $recettes = App::getInstance()->getTable('recette')->all();
         $categories = App::getInstance()->getTable('categorie')->all();
-        $this->render('posts.index', compact('recettes', 'categories'));
+        $last_recipe = APP::getInstance()->getTable('recette')->last_id();
+        $best_likes = APP::getInstance()->getTable('recette')->best_like();
+        $this->render('posts.index', compact('recettes', 'categories', 'last_recipe', 'best_likes'));
+
 
     }
 
@@ -91,6 +94,7 @@ class PostsController extends AppController{
         $categories = App::getInstance()->getTable('categorie')->show($_GET['id']);
         $ingredients = App::getInstance()->getTable('ingredient')->show($_GET['id']);
         $instructions = APP::getInstance()->getTable('recette')->expl($recettes);
+
 
         $this->render('posts.recipe', compact('recettes', 'categories', 'ingredients', 'instructions', 'progress'));
     }
