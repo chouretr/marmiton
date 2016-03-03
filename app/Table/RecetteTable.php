@@ -35,4 +35,14 @@ class RecetteTable extends Table{
         return explode('</br>', $tab);
     }
 
+    public function last_id()
+    {
+        return $this->query("SELECT * FROM recette ORDER BY id DESC LIMIT 3");
+    }
+
+    public function best_like()
+    {
+        return $this->query("SELECT * FROM recette ORDER BY like_count DESC LIMIT 3");
+    }
+
 }
