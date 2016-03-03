@@ -39,7 +39,7 @@ Class Table{
 
     public function add($post){
         $sql_parts = [];
-        var_dump($post);
+        //var_dump($post);
         ini_set("display_errors",0);error_reporting(0);
         $heurprep = 0;
         $heurcuis = 0;
@@ -139,15 +139,15 @@ Class Table{
             }
             elseif($k == 'instructions') {
 
-                var_dump($k, $v);
+                //var_dump($k, $v);
                 $nb = count($v) + 1;
                 for($i = 1; $i < $nb; $i++){
 
                     $v[0] .= $v[$i].'</br>';
                     //var_dump($v);
                     unset($v[$i]);
-                    var_dump($v);
-                    var_dump($i);
+                    //var_dump($v);
+                    //var_dump($i);
 
 
                 }
@@ -186,7 +186,7 @@ Class Table{
         //var_dump($sql_ingredient);
 
         $sql_parts = implode(', ', $sql_parts);
-        var_dump($sql_parts);
+        //var_dump($sql_parts);
         //var_dump($attributes_recette);
         //var_dump($sql_parts);
         //var_dump($attributes_recette);
@@ -195,35 +195,67 @@ Class Table{
         $attributes_notes[] = $id->id;
         $sql_ingredient[] = $id->id;
         //var_dump($sql_ingredient);
+        //var_dump($sql_ingredient);
         //var_dump($attributes_notes);
-        //$this->query("INSERT INTO notes SET id_recette = ?", $id->id);
         $this->query("INSERT INTO votes SET id_recette = ?", $attributes_notes, true);
         //echo count($sql_ingredient);
         $c = 0;
         $d = 1;
         $e = 0;
+        $f = 0;
 
         while($e < count($sql_ingredient[1])) {
             //$sql_ingredient[$c][] = $id->id;
             $tableadark = null;
             $c = 0;
             //var_dump($sql_ingredient);
-            while($c < count($sql_ingredient) - 1) {
+            while ($c < count($sql_ingredient) - 1) {
                 $tableadark[] = $sql_ingredient[$c][$d];
-                //var_dump($sql_ingredient);
+
+                //var_dump($tableadark);
+
+                if ($c == 2) {
+                    //echo 'value';
+                    $ingredient[0] = $tableadark[2];
+                    //var_dump($ingredient);
+
+                    //var_dump($this->query("SELECT id FROM ingredients WHERE id=?", $ingredient, true));
+                    /*if ($this->query("SELECT id FROM ingredients WHERE id=?", $ingredient, true) != null) {
+                        echo 'lllllllllllllllllllllllllllllllllllllllllllllll';
+    //$this->query("INSERT INTO ingredients SET nom = ?", $ingredient, true);
+                    }*/
+
+                    if ($this->query("SELECT nom FROM ingredients WHERE nom=?", $ingredient, true) == null && $this->query("SELECT id FROM ingredients WHERE id=?", $ingredient, true) == null) {
+                        $this->query("INSERT INTO ingredients SET nom = ?", $ingredient, true);
+                        $id_add = $this->query("SELECT id FROM ingredients WHERE nom = ?", $ingredient, true);
+                        //echo 'lllllllllllllllllllllllllllllllllllllllllllllll';
+                        $tableadark[2] = $id_add->id;
+                        //var_dump($tableadark);
+                        //echo 'lllllllllllllllllllllllllllllllllllllllllllllll';
+                    }
+
+                }
 
 
                 $c++;
             }
+
+
             $tableadark[] = $id->id;
-            //echo count($sql_ingredient);
             //var_dump($tableadark);
-            var_dump($this->query("INSERT INTO ingredients_recette SET quantite = ?, unite_id = ?, ingredients_id = ?, recette_id = ?", $tableadark, true));
+            //echo count($sql_ingredient);
+            /*if($this->query("SELECT nom FROM ingredients WHERE nom=?", $tableadark[2], true) == false) {
+                $ingredient_add[] = $tableadark[2];
+                //var_dump($ingredient_add);
+                $this->query("INSERT INTO ingredients SET nom = ?", $ingredient_add, true);
+            }*/
+
+            $this->query("INSERT INTO ingredients_recette SET quantite = ?, unite_id = ?, ingredients_id = ?, recette_id = ?", $tableadark, true);
             $e++;
             $d++;
         }
+        //var_dump($tableadark);
         return true;
-        //var_dump($this->query("INSERT INTO recette SET $sql_parts", $attributes, true));
 
 
 
