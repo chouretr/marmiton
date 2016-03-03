@@ -40,7 +40,7 @@ $(function()
         var i = 1;
         var recipe_name_search = [];
         var url = 'search_by_ingredient.php?';
-        while (i < x)
+        while (i <= x)
         {
             tmp = 'ingredient_'+i;
             recipe_name_search.push(document.getElementById(tmp).value);
@@ -48,13 +48,12 @@ $(function()
             i++;
         }
         url = url.substring(0, url.length - 1); // On retire le "&" de trop
-        alert(url);
         $.getJSON(url, function (data)
         {
             $.each(data,function(index, element)
             {
                 $('#show-recette').append($('<div>', {
-                    html : '<a href="index.php?page=recipe&id='+element.id +'">'+element.nom+'</a>'
+                    html : '<a class="delete_recipe" href="index.php?page=recipe&id='+element.id +'">'+element.nom+'</a>'
                 }));
             });
         });
