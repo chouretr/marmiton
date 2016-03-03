@@ -1,4 +1,4 @@
-<p><a href="index.php?page=page2">ajout recette</a></p>
+<p><a class="btn btn-primary" href="index.php?page=page2">ajout recette</a></p>
 
 <div class="row actus" style="padding-top: 40px;">
     <div class="col-lg-5" id="last_add" style="Border: 1px solid deepskyblue; height: 200px;" >
@@ -32,23 +32,17 @@
     </div>
 
     <div class="col-lg-5 ui-widget" style="border: 1px solid deepskyblue;min-height: 200px;padding-top: 25px;">
-
-            <input placeholder="Rechercher par ingredient" type="text" name="ingredient_1" class="tags form-control input-lg"/>
-        <!--changement-->
-
-
-        <a href="#" class="btn btn-default before_rm" id="add_ingredient_search"><span class="glyphicon glyphicon-plus add_ingredient"></span></a>
-
+        <!--<form id="monform" action="search_by_ingredient.php" method="post">-->
+            <input placeholder="Rechercher par ingredient" type="text" id="ingredient_1" name="ingredient_1" class="tags form-control input-lg"/>
+            <!--changement-->
+            <a href="#" class="btn btn-default before_rm" id="add_ingredient_search"><span class="glyphicon glyphicon-plus add_ingredient"></span></a>
             <button type="submit"  id="get-recette" class="btn btn-inverse">Rechercher</button>
 
-        <div id="show-recette">
-            <!-- contenu recherche -->
-        </div>
+            <div id="show-recette">
+                <!-- contenu recherche -->
+            </div>
+        <!--</form>-->
     </div>
-
-
-
-
 </div>
 
 

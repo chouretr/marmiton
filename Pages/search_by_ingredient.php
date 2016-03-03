@@ -1,9 +1,19 @@
 <?php
 
-header('Content-type: application/json');
-if(isset($_GET['name_search'])) {
 
-    $chaine = addslashes($_GET['name_search']);
+    $arr = array(); // On crée l'array qui recevra les données
+    $tmp = '';
+    for ($i = 1 ; isset($_GET['ingredient_' . $i]) ; $i++)
+    {
+        $arr[$i] = $_GET['ingredient_' . $i]; // On y met les données
+        $tmp .= "ingredients.nom = ? OR ";
+    }
+$tmp = substr($tmp, 0, -4);
+
+//header('Content-type: application/json');
+if(isset($_GET['ingredient_1'])) {
+
+   // $chaine = addslashes($_GET['name_search']);
 
 
     try {
@@ -17,11 +27,20 @@ if(isset($_GET['name_search'])) {
 FROM recette, ingredients, ingredients_recette
 WHERE ingredients_recette.recette_id = recette.id
 AND ingredients_recette.ingredients_id = ingredients.id
-AND (ingredients.nom = ? OR ingredients.nom = ?)
+AND ($tmp)
 GROUP BY recette.nom";
-
+    var_dump($requete);
+    var_dump($arr);
+    echo $arr[1];
+    echo ($requete);
     $res = $pdo->prepare($requete);
-    $res->execute(array('%' . $chaine . '%'));
+    $j = 1;
+    while($j < $i)
+    {
+        $res->bindParam(1, $arr[$j], PDO::PARAM_STR);
+        $j++;
+    }
+    $res->execute();
     $tab = $res->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($tab);
 }
